@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+
+<extension version="2.5" type="template" client="site" method="upgrade">
+	
+	<name>Rangers2014</name><!-- name the template -->
+	<creationDate>2013-11-07</creationDate><!-- the date your are beginn to code -->
+	<author>Klaus-Peter Sauer</author><!-- your name (oops, I repeat myself) -->
+	<copyright>Copyright © KP and Muenchen Rangers</copyright><!-- for who you are coding -->
+	<authorEmail>webmaster@muenchen-rangers.de</authorEmail><!-- your email address -->
+	<authorUrl>http://www.muenchen-rangers.de</authorUrl><!-- your url -->
+	<version>1.0.0</version><!-- give your template a number -->
+	<description><![CDATA[ 
+		<h1>München Rangers Template 2014</h1>
+		<h2>Version 1.0.0</h2>		
+		<p><img src="../templates/Rangers2014/template_preview.png" /></p>
+		<h2>Modulpositionen</h2>
+		<ol>
+			<li>teamlinks - Liga Logos & Weblinks in der Titelzeile</li>
+			<li>topmenu - Menu  in der Titelzeile</li>
+			<li>search - Suchfeld in der Titelzeile</li>
+			<li>ticker - Rangers News Ticker über dem Hauptmenu</li>
+			<li>navbar - Hauptmenu mit Rangers Stern</li>
+			<li>show - Slideshow Modul</li>
+			<li>news - News auf Startseite</li>
+			<li>sponsor1 - Hauptsponsoren</li>
+			<li>logout - Logout nur nach Login sichtbar </li>
+			<li>message - Nachrichtenzeile</li>
+			<li>component - Joomla Hauptkomponente zur Artikelanzeige</li>
+			<li>gamecenter - Slider für alle Spiele von allen Mannschaften</li>
+			<li>user10 - Unterhalb von Gamecenter</li>
+			<li>user11 - Spalte zwischen Gamecenter & Sidebar</li>
+			<li>user12 - Unterhalb gamcenter eigene Zeile mit user13</li>
+			<li>user13 - Unterhalb gamcenter eigene Zeile mit user12</li>
+			<li>sidebar - Spalte Rechts für Kalender & Termine</li>
+			<li>facebook - Facebook Modul im Fußbereich</li>
+			<li>expedia - Expedia Modul im Fußbereich</li>
+			<li>sponsor2-1 bis 2-6 - Partner & weitere Sponsoren</li>
+			<li>sitemap1 bis 5 - Fünf Spalten für die Sitemap</li>
+			<li>social - floating Social Media Buttons rechts </li>
+			<li>debug - Debug im Footer</li>
+		</ol>
+		<p>Created by <a href="http://www.muenchen-rangers.de" target="_blank">Klaus-Peter Sauer | muenchen-rangers.de</a> &copy; by KP</p>
+			]]></description><!-- change the description as you like -->
+	
+	<files><!-- no need to change -->
+		<folder>css</folder>
+		<folder>fonts</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>less</folder>
+		<folder>sass</folder>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>index.php</filename>
+		<filename>logic.php</filename>
+		<filename>offline.php</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>favicon.ico</filename>
+		<filename>templateDetails.xml</filename>
+	</files>
+	
+	<languages folder="language"><!-- no need to change -->
+		<language tag="de-DE">de-DE.tpl_Rangers2014.ini</language>
+		<language tag="en-GB">en-GB.tpl_Rangers2014.ini</language>
+		<language tag="ca-CA">ca-CA.tpl_Rangers2014.ini</language>
+		<language tag="es-ES">es-ES.tpl_Rangers2014.ini</language>
+	</languages>
+	
+	<positions><!-- define the positions for modules here -->
+		<position>topmenu</position>
+		<position>search</position>
+		<position>ticker</position>
+		<position>sidebar</position>
+		<position>teamlinks</position>
+		<position>sponsor1</position>
+		<position>sponsor2-1</position>
+		<position>sponsor2-2</position>
+		<position>sponsor2-3</position>
+		<position>sponsor2-4</position>
+		<position>sponsor2-5</position>
+		<position>sponsor2-6</position>
+		<position>gamecenter</position>
+		<position>navbar</position>
+		<position>show</position>
+		<position>social</position>
+		<position>news</position>
+		<position>breadcrumbs</position>
+		<position>user10</position>
+		<position>user11</position>
+		<position>user12</position>
+		<position>user13</position>
+		<position>expedia</position>
+		<position>facebook</position>
+		<position>sitemap1</position>
+		<position>sitemap2</position>
+		<position>sitemap3</position>
+		<position>sitemap4</position>
+		<position>sitemap5</position>
+		<position>logout</position>
+		<position>debug</position>
+	</positions>
+	
+	<config><!-- no need to change -->
+		<fields name="params">
+
+			<fieldset name="basic">
+
+				<!-- MODERNIZR-->
+				<field name="modernizr" type="radio" default="0" 
+					label="TPL_FRONTEND_PARAMETER_MODERNIZR_LABEL" 
+					description="TPL_FRONTEND_PARAMETER_MODERNIZR_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<!-- CSS METHOD -->
+				<field name="cssmethod" type="radio" default="css" 
+					label="TPL_FRONTEND_PARAMETER_CSSMETHOD_LABEL" 
+					description="TPL_FRONTEND_PARAMETER_CSSMETHOD_DESC">
+					<option value="css">CSS (default)</option>
+					<option value="min">CSS (minified)</option>
+					<option value="less">LESS</option>
+					<option value="sass">SASS</option>
+				</field>
+
+				<!-- LESS.JS -->
+				<field name="lessjs" type="radio" default="0" 
+					label="TPL_FRONTEND_PARAMETER_LESSJS_LABEL" 
+					description="TPL_FRONTEND_PARAMETER_LESSJS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<!-- FOUNDATION -->
+				<field name="foundation" type="radio" default="0" 
+					label="TPL_FRONTEND_PARAMETER_FOUNDATION_LABEL" 
+					description="TPL_FRONTEND_PARAMETER_FOUNDATION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<!-- BOOTSTRAP -->
+				<field name="bootstrap" type="radio" default="0" 
+					label="TPL_FRONTEND_PARAMETER_BOOTSTRAP_LABEL" 
+					description="TPL_FRONTEND_PARAMETER_BOOTSTRAP_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<!-- FONT-AWESOME -->
+				<field name="fontawesome" type="radio" default="0" 
+					label="TPL_FRONTEND_PARAMETER_FONTAWESOME_LABEL" 
+					description="TPL_FRONTEND_PARAMETER_FONTAWESOME_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<!-- JQUERY -->
+				<field name="jquery" type="radio" default="0" 
+					label="TPL_FRONTEND_PARAMETER_JQUERY_LABEL" 
+					description="TPL_FRONTEND_PARAMETER_JQUERY_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<!-- PIE-->
+				<field name="pie" type="radio" default="0" 
+					label="TPL_FRONTEND_PARAMETER_PIE_LABEL" 
+					description="TPL_FRONTEND_PARAMETER_PIE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<!-- GOOGLE FONT-->
+                <field name="googlefont" type="text" default=""
+                	label="TPL_FRONTEND_PARAMETER_GOOGLEFONT_LABEL"
+                	description="TPL_FRONTEND_PARAMETER_GOOGLEFONT_DESC">
+				</field>
+
+			</fieldset>
+			
+			<fieldset name="advanced">
+
+				<!-- Disable JavaScript -->	
+				<field name="disablejs" type="radio" default="0" 
+					label="TPL_FRONTEND_PARAMETER_DISABLEJS_LABEL" 
+					description="TPL_FRONTEND_PARAMETER_DISABLEJS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<!-- JavaScript Files -->
+				<field name="fnjs" type="textarea" 
+					label="TPL_FRONTEND_PARAMETER_FNJS_LABEL" 
+					description="TPL_FRONTEND_PARAMETER_FNJS_LABEL" 
+					cols="30" default="mootools-core.js,caption.js" rows="4" />
+
+				<!-- Disable CSS -->
+				<field name="disablecss" type="radio" default="0" 
+					label="TPL_FRONTEND_PARAMETER_DISABLECSS_LABEL" 
+					description="TPL_FRONTEND_PARAMETER_DISABLECSS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>	
+				</field>
+
+				<!-- CSS Files -->
+				<field name="fncss" type="textarea" 
+					label="TPL_FRONTEND_PARAMETER_FNCSS_LABEL" 
+					description="TPL_FRONTEND_PARAMETER_FNCSS_DESC" 
+					cols="30" rows="4" />
+
+			</fieldset>
+		</fields>
+	</config>
+	
+</extension>
