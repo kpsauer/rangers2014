@@ -1,5 +1,12 @@
 <?php defined( '_JEXEC' ) or die;
-
+/*------------------------------------------------------------------------
+# author  Klaus-Peter Sauer
+# version   1.0.0 November 9, 2013
+# package München Rangers Joomla Template 2014
+# copyright Copyright © 2013 by Klaus-Peter Sauer - All rights reserved.
+# @license  http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+# Website http://www.muenchen-rangers.de
+-------------------------------------------------------------------------*/
 // variables
 $app = JFactory::getApplication();
 $doc = JFactory::getDocument(); 

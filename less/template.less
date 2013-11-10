@@ -1,31 +1,466 @@
+/*------------------------------------------------------------------------
+# author  Klaus-Peter Sauer
+# version   1.0.0 November 9, 2013
+# package München Rangers Joomla Template 2014
+# copyright Copyright © 2013 by Klaus-Peter Sauer - All rights reserved.
+# @license  http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+# Website http://www.muenchen-rangers.de
+-------------------------------------------------------------------------*/
 // normalize
 @import 'normalize.less';
-
-
+@import 'bootstrap/bootstrap.less';
 
 // colors
+@back-color: #222222;
 @white: #FFFFFF;
+@black: #000000;
+@orange: #FF6600;
+@anthrazit: #1b1b1b;
+@hellgrau: #777777;
 
-
-
-/* FRONTEND LESS
-*********************************************/
+// MIXINS
+.rounded-corners (@radius: 4px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+/**************************************************************************************************************************************
+***************************************************************************************************************************************
+                    FONTS
+***************************************************************************************************************************************
+***************************************************************************************************************************************/
+@font-face {
+    font-family: 'alternate_gothic_1Rg';
+    src: url('../fonts/AlternateGothicNo1-webfont.eot');
+    src: url('../fonts/AlternateGothicNo1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AlternateGothicNo1-webfont.woff') format('woff'),
+         url('../fonts/AlternateGothicNo1-webfont.ttf') format('truetype'),
+         url('../fonts/AlternateGothicNo1-webfont.svg#alternate_gothic_1Rg') format('svg');
+    font-weight: normal;
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'alternate_gothic_2Rg';
+    src: url('../fonts/AlternateGothicNo2-webfont.eot');
+    src: url('../fonts/AlternateGothicNo2-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AlternateGothicNo2-webfont.woff') format('woff'),
+         url('../fonts/AlternateGothicNo2-webfont.ttf') format('truetype'),
+         url('../fonts/AlternateGothicNo2-webfont.svg#alternate_gothic_2Rg') format('svg');
+    font-weight: normal;
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'alternate_gothic_3Rg';
+    src: url('../fonts/AlternateGothicNo3-webfont.eot');
+    src: url('../fonts/AlternateGothicNo3-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AlternateGothicNo3-webfont.woff') format('woff'),
+         url('../fonts/AlternateGothicNo3-webfont.ttf') format('truetype'),
+         url('../fonts/AlternateGothicNo3-webfont.svg#alternate_gothic_3Rg') format('svg');
+    font-weight: normal;
+    font-style: normal; 
+}
+.componentheading, 
+h1 {font: 46px/54px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px white;}
+h2 {font: 38px/46px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; }
+h3 {font: 32px/38px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px white;}
+h4 {font: 28px/34px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+h5 {font: 22px/30px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+h6 {font: 16px/24px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+/**************************************************************************************************************************************
+  FRONTEND LESS
+***************************************************************************************************************************************/
 html {
   overflow-y: scroll;
 }
 body {
-	background-color:@white;
+  font-size: 14px;
+  margin-top:0px;
+  background-color:@back-color;
+}
+a {
+  color:@orange; 
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color:@anthrazit;
+  text-decoration: none;
+}
+/* HINTERGRUNDBILD */ 
+#bgoverall {
+  height:100%; 
+  min-height: 1100px; 
+  margin:0 auto; 
+  text-align:left; 
+  width:100%;
+    z-index: 0; 
+  background:url(../images/background/background.jpg) no-repeat top center @back-color;
+}
+/**************************************************************************************************************************************
+***************************************************************************************************************************************
+                    HEADER
+***************************************************************************************************************************************
+***************************************************************************************************************************************/
+#bgheader { 
+  background-color:@back-color;
+}
+div#bgheader .teams {
+  background: url(../images/header_sprite_teams_2013-6.png) no-repeat scroll 0 0 transparent;
+  height: 36px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  z-index: 1;
+}
+div#bgheader .teams:hover {
+  background: url(../images/header_sprite_teams_2013-6.png) no-repeat scroll 0 -36px transparent; 
+}
+div#bgheader .teams a.AFVBY {
+  left: 10px;
+  width: 70px;
+}
+div#bgheader .teams a.FEL {
+  left: 110px;
+  width: 38px;
+}
+div#bgheader .teams a.FFB {
+  left: 162px;
+  width: 42px;
+}
+div#bgheader .teams a.ING {
+  left: 219px;
+  width: 21px;
+}
+div#bgheader .teams a.REG {
+  left: 255px;
+  width: 28px;
+}
+div#bgheader .teams a.STR {
+  left: 298px;
+  width: 44px;
+}
+div#bgheader .teams a {
+  display: block;
+  height: 36px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+/**************************************************************************************************************************************
+                HEADER Topmenu 
+***************************************************************************************************************************************/
+#bgheader .container .row .navbar {
+  margin-bottom: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  min-height: 36px;
+} 
+#bgheader .container .row .navbar .navbar-header {
+  min-height: 10px;
+} 
+#bgheader .navbar .nav > li > a {
+    float: none;
+    padding: 8px 8px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+} 
+#bgheader .navbar-inverse {
+  background-color: @back-color;
+  background-image: -moz-linear-gradient(top, @back-color, @back-color);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@back-color), to(@back-color));
+  background-image: -webkit-linear-gradient(top, @back-color, @back-color);
+  background-image: -o-linear-gradient(top, @back-color, @back-color);
+  background-image: linear-gradient(to bottom, @back-color, @back-color);
+  background-repeat: repeat-x;
+  border-color: @back-color;
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff222222', GradientType=0);
+}
+/**************************************************************************************************************************************
+                HEADER SEARCH
+***************************************************************************************************************************************/
+.mr-search {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+/* SUCHE Eingabefeld */ 
+#bgheader  select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  display: inline-block;
+/*  height: 14px; */
+  padding: 4px 6px;
+  margin-bottom: 5px;
+  font-size: 10px;
+  line-height: 14px;
+  .rounded-corners;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(255, 102, 0, 0.8);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 102, 0, 0.6);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 102, 0, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 102, 0, 0.6);
+}
+#mod-search-searchword {
+  margin-top:6px;
+}
+/**************************************************************************************************************************************
+***************************************************************************************************************************************
+                    MIDDLE
+***************************************************************************************************************************************
+***************************************************************************************************************************************/
+
+/**************************************************************************************************************************************
+    TICKER
+***************************************************************************************************************************************/
+#ticker {
+  margin: 7px 0px;
+  min-height: 14px;
+}
+#ticker .gkHighlighterInterface {
+  padding: 3px 7px;
+}
+#ticker .gkHighlighterInterface span.text { 
+  font-size: 14px; 
+}
+#ticker .gkHighlighterWrapperSub {
+  min-height: 24px;
+}
+#ticker .gkHighlighterItem{
+  color: @anthrazit;
+  padding: 2px 0;
+  font-weight:bold;
+}
+#ticker .gkHighlighterGK5 {
+  border: 0px solid #DDDDDD;
+  width: 100% !important;
+  .rounded-corners;
+  /* Fallback for web browsers that doesn't support RGBa background-color:#f5f5f5;*/
+  background: rgb(245, 245, 245);
+  /* RGBa with 0.8 opacity */
+  background: rgba(245, 245, 245, 0.8);
+  /* For IE 5.5 - 7
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCf5f5f5, endColorstr=#CCf5f5f5);*/
+  /* For IE 8*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCf5f5f5, endColorstr=#CCf5f5f5)";
+}
+div#ticker div#gkHighlighterGK5-0.gkHighlighterGK5 div.gkHighlighterInterface {
+  background-color: @orange;
+  .rounded-corners;
+}
+/**************************************************************************************************************************************
+    SPONSOREN
+***************************************************************************************************************************************/
+.sponsor1 {
+  margin-bottom: 15px;
+  padding: 1px 5px;
+  text-align: center;
+}
+.sponsor1 p {
+  margin: 3px 0;
+}
+.sponsor2 {
+  text-align: center;
+}
+.logout {
+  padding: 5px;
+  text-align: center;
+}  
+div#bgoverall div#overall div.container div.logout form#login-form {
+  margin: 0 0 5px;
+}
+img.sponsor-detail {
+  max-width: 200px;
+  width:auto; 
+} 
+/**************************************************************************************************************************************
+***************************************************************************************************************************************
+                    FOOTER
+***************************************************************************************************************************************
+***************************************************************************************************************************************/
+#bgfooter {
+  background-color:@back-color;
+  padding: 10px; 
+}
+/**************************************************************************************************************************************
+    SITEMAP
+***************************************************************************************************************************************/
+.sitemap  {
+  color:@hellgrau; 
+  padding-bottom: 20px; 
+}
+.sitemap p { 
+  font-size:14px;
+  margin: 0;
+  border-bottom: 1px dotted @hellgrau;
+  padding: 5px 0;
+}
+.sitemap h1 { 
+  font: 24px/24px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: none;
+  margin: 20px 0 5px; 
+}
+div.sitemap a:link, div.sitemap a:visited {
+  border: 0;
+  color:@hellgrau; 
+  font-weight:normal; 
+  text-decoration:none;
+}
+div.sitemap a:hover {
+  color:@orange;
+}
+/**************************************************************************************************************************************
+    FACEBOOK & EXPEDIA
+***************************************************************************************************************************************/
+.facebook, .expedia{
+  padding-bottom: 20px;
+}
+/**************************************************************************************************************************************
+    Social Buttons
+***************************************************************************************************************************************/
+.social-buttons {
+  position: fixed;
+  right: 0;
+  top: 135px;
+  width: 45px;
+  z-index: 2030;
+}
+.social-buttons .social-icon {
+  background-repeat: no-repeat;
+  display: block;
+  float: right;
+  height: 43px;
+  margin-bottom: 2px;
+  -webkit-transition: width 0.2s ease-in 0s, background-color 0.2s ease-in 0s;
+  -moz-transition: width 0.2s ease-in 0s, background-color 0.2s ease-in 0s;
+  -o-transition: width 0.2s ease-in 0s, background-color 0.2s ease-in 0s;
+  -ms-transition: width 0.2s ease-in 0s, background-color 0.2s ease-in 0s;
+  transition: width 0.2s ease-in 0s, background-color 0.2s ease-in 0s;
+  width: 43px;
+}
+.social-buttons .social-icon:hover {
+  width: 175px;
+}
+.social-buttons .social-text {
+  display: none;
+  float: left;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 11px 0 11px 40px;
+  white-space: nowrap;
+}
+.social-buttons #facebook-btn .social-text {
+    margin: 11px 0 11px 32px;
+}
+.social-buttons a:hover > span {
+    width: auto;
+}
+.social-buttons a:hover .social-text {
+    display: block;
+}
+.social-buttons #facebook-btn span {
+    background-position: 12px 10px;
+}
+.social-buttons #twitter-btn span {
+    background-position: 11px -35px;
+}
+.social-buttons #google-btn span {
+    background-position: 10px -127px;
+}
+.social-buttons #rss-btn span {
+    background-position: 11px -80px;
+}
+.social-buttons #twitter-btn .social-icon, 
+.social-buttons #facebook-btn .social-icon, 
+.social-buttons #google-btn .social-icon, 
+.social-buttons #rss-btn .social-icon {
+  background-color: @back-color;
+/*  background-color: #33353B; */
+  background-image: url(../images/social-buttons.png);
+}
+.social-buttons #facebook-btn:hover .social-icon {
+  background-color: #3B5998;
+}
+.social-buttons #twitter-btn:hover .social-icon {
+  background-color: #00ACED;
+}
+.social-buttons #google-btn:hover .social-icon {
+  background-color: #D34836;
+}
+.social-buttons #rss-btn:hover .social-icon {
+  background-color: #E15A00;
+}
+.social-buttons .social-text { 
+  color: #F5F5F5;
+}
+/**************************************************************************************************************************************
+    SCROLL TO TOP 
+***************************************************************************************************************************************/
+#toTop {
+  display:none;
+  text-decoration:none;
+  position:fixed;
+  bottom:10px;
+  right:10px;
+  overflow:hidden;
+  width:51px;
+  height:51px;
+  border:none;
+  text-indent:100%;
+  background:url(../images/ui.totop.png) no-repeat left top;
+}
+#toTopHover {
+  background:url(../images/ui.totop.png) no-repeat left -51px;
+  width:51px;
+  height:51px;
+  display:block;
+  overflow:hidden;
+  float:left;
+  opacity: 0;
+  -moz-opacity: 0;
+  filter:alpha(opacity=0);
+}
+#toTop:active, #toTop:focus {
+  outline:none;
+}
+/**************************************************************************************************************************************
+    COPYRIGHT
+***************************************************************************************************************************************/
+#copyright {
+  color: @hellgrau;
+  text-align: center;
+  }
+img.footer-logo  {
+  max-width: 1px;
+  max-height: 1px;
+  height: auto;
+  width: auto;
 }
 
 
+/**************************************************************************************************************************************
+    LAYOUT
+***************************************************************************************************************************************/
 
-/* LAYOUT
-*********************************************/
 
 
-
-/* HELPER
-*********************************************/
+/**************************************************************************************************************************************
+    HELPER
+***************************************************************************************************************************************/
 /* Floats */
 .float-left {
   float: left;
@@ -47,8 +482,11 @@ body {
 
 
 
-/* Media Queries
-*********************************************/
+/**************************************************************************************************************************************
+**************************************************************************************************************************************
+                           Media Queries
+**************************************************************************************************************************************
+***************************************************************************************************************************************/
 /* Retina */
 @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (max--moz-device-pixel-ratio: 2) {
 	

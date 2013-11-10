@@ -1,7 +1,295 @@
 /* EDITOR CSS
 *********************************************/
-body {
-	background-color: #fff;
-	color: #000;
-	font: normal normal normal 75%/125% arial,sans-serif;
+/*                    FONTS 				*/
+@font-face {
+    font-family: 'alternate_gothic_1Rg';
+    src: url('../fonts/AlternateGothicNo1-webfont.eot');
+    src: url('../fonts/AlternateGothicNo1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AlternateGothicNo1-webfont.woff') format('woff'),
+         url('../fonts/AlternateGothicNo1-webfont.ttf') format('truetype'),
+         url('../fonts/AlternateGothicNo1-webfont.svg#alternate_gothic_1Rg') format('svg');
+    font-weight: normal;
+    font-style: normal; }
+@font-face {
+    font-family: 'alternate_gothic_2Rg';
+    src: url('../fonts/AlternateGothicNo2-webfont.eot');
+    src: url('../fonts/AlternateGothicNo2-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AlternateGothicNo2-webfont.woff') format('woff'),
+         url('../fonts/AlternateGothicNo2-webfont.ttf') format('truetype'),
+         url('../fonts/AlternateGothicNo2-webfont.svg#alternate_gothic_2Rg') format('svg');
+    font-weight: normal;
+    font-style: normal; }
+@font-face {
+    font-family: 'alternate_gothic_3Rg';
+    src: url('../fonts/AlternateGothicNo3-webfont.eot');
+    src: url('../fonts/AlternateGothicNo3-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AlternateGothicNo3-webfont.woff') format('woff'),
+         url('../fonts/AlternateGothicNo3-webfont.ttf') format('truetype'),
+         url('../fonts/AlternateGothicNo3-webfont.svg#alternate_gothic_3Rg') format('svg');
+    font-weight: normal;
+    font-style: normal; }
+ 
+h1 {font: 46px/54px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px white;}
+h2 {font: 38px/46px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; }
+h3 {font: 32px/38px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px white;}
+h4 {font: 28px/34px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+h5 {font: 22px/30px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+h6 {font: 16px/24px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+
+
+/* LAYOUT
+*********************************************/
+body {background-color:#fff; color:#000; font:normal normal normal 100%/125% arial,sans-serif;}
+
+a {
+  color: #FF6600; 
+  text-decoration: none;}
+a:hover, a:focus {
+  color: #1b1b1b;
+  text-decoration: none;}
+
+
+/**********************************************
+***********************************************
+                    FOOTER
+***********************************************
+***********************************************/
+
+/* SPONSOREN
+*********************************************/
+.sponsor1 {
+  margin-bottom: 15px;
+  text-align: center;}
+.sponsor1 p {
+  margin: 3px 0;}
+.sponsor2 {
+  text-align: center;}
+img.sponsor-detail {
+  max-width: 200px;
+  width:auto; } 
+
+/* SITEMAP
+*********************************************/
+.sitemap  {
+  color:#777777; 
+  padding-bottom: 20px; }
+.sitemap p { 
+  font-size:12px;
+  margin: 0;
+  border-bottom: 1px dotted #777777;
+  padding: 5px 0;}
+.sitemap h1 { 
+  font: 20px/20px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: none;
+  margin: 20px 0 5px; }
+div.sitemap a:link, div.sitemap a:visited {
+  border: 0;
+  color:#777777; 
+  font-weight:normal; 
+  text-decoration:none;}
+div.sitemap a:hover {
+  color:#ff6600;}  
+
+/**********************************************
+***********************************************
+                NFL Scoreboard
+***********************************************
+***********************************************/
+/*.cf {
+  zoom: 1;} */
+.game-center-header {
+  margin-left: 0px !important;
+  margin-bottom: 5px;
+  padding: 0 1px ;}
+
+.game-center-header-desc{
+  float:left;}
+.game-center-header-date {
+  float: right;}
+
+.game-center-header-date a,
+.game-center-header-desc a {
+  font: normal normal 18px/18px 'alternate_gothic_3Rg', sans-serif;
+  color: #B6061E;
+  text-transform: uppercase;}
+
+.game-center-scoreboard {
+  text-shadow: -1px 1px 1px white;
+  height: 90px;
+  width: 400px;
+  margin: 0 0 7px 30px;}
+
+.game-center-away-team {
+  float: right;}
+.game-center-home-team {
+  float: left;}
+.game-center-away-team img {
+  float: right;
+  margin: 1px 0 0 0;}
+.game-center-home-team img {
+  float: left;
+  margin: 1px 0 0 0;}
+.game-center-away-team .score,
+.game-center-home-team .score {
+   /* Fallback for web browsers that doesn't support RGBa background-color:#f5f5f5;*/
+  background: rgb(245, 245, 245);
+  /* RGBa with 0.6 opacity */
+  background: rgba(245, 245, 245, 0.8);
+  /* For IE 5.5 - 7*/
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCf5f5f5, endColorstr=#CCf5f5f5);
+  /* For IE 8*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCf5f5f5, endColorstr=#CCf5f5f5)";
+  margin: 1px 0 0 0;
+  vertical-align: middle;
+  -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+        border-radius: 4px;}
+.game-center-away-team .score {
+  float: right;}
+.game-center-home-team .score {
+  float: left;}
+.game-center-away-team img, 
+.game-center-home-team img {
+  width: 100px;
+-webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+        border-radius: 4px;}
+.game-center-scoreboard .score a {
+  font: 64px/72px 'alternate_gothic_3Rg', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;  
+  color: #222221;
+  display: block;
+  width: 80px;
+  height: 67px;}
+.game-center-scoreboard .score.lost a {
+  color: #989897;
+  text-shadow: -1px 1px 1px #C7C7C7;}
+.game-center-scoreboard .score.won a {
+  text-shadow: -1px 1px 1px #C7C7C7;}
+.game-center-time-left {
+  float: left;
+  width: 40px;
+  height: 67px;
+  font-family: 'alternate_gothic_3Rg',sans-serif;}
+.game-center-time-final a {
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  line-height: 24px;
+  color: #222221;
+  margin: 25px 0 0 0;
+  position: relative;}
+
+
+/* Beitragsinfo */
+dl.article-info {
+  font-size: 11px;
+  margin-bottom: 0;
+  text-align: right;
 }
+
+
+/*                Ergebnistabellen			*/
+.nav-tabs {
+  border-bottom: 1px solid #888888;}
+.nav-tabs > li > a,
+.nav-pills > li > a {
+  font: 14px/12px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; 
+  padding: 7px 5px;  
+  margin-right: 1px;
+  text-transform: uppercase;}
+
+.nav-tabs > li > a {
+  border: 1px solid transparent; }
+
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover {
+  font: 15px/12px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; 
+  border: 1px solid #888888;
+  border-bottom-color: transparent;
+  background: rgb(245, 245, 245);
+  /* RGBa with 0.6 opacity */
+  background: rgba(245, 245, 245, 0.8);
+  /* For IE 5.5 - 7*/
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCf5f5f5, endColorstr=#CCf5f5f5);
+  /* For IE 8*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCf5f5f5, endColorstr=#CCf5f5f5)"; }
+
+.moduletable div.custom ul.nav{
+  margin-bottom:  0px;}
+
+.moduletable div.custom div.tab-content {
+  border-top-color: transparent;
+  padding: 0 5px;}
+
+#bgoverall div#overall div.moduletable table.table{
+  margin-bottom: 6px;
+  margin-top: 6px;}
+
+.mr-tab{
+  font-size: 12px;
+  background: rgb(245, 245, 245);
+  /* RGBa with 0.6 opacity */
+  background: rgba(245, 245, 245, 0.8);
+  /* For IE 5.5 - 7*/
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCf5f5f5, endColorstr=#CCf5f5f5);
+  /* For IE 8*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCf5f5f5, endColorstr=#CCf5f5f5)"; }
+
+/* Individuelles Modul mit der 'Modulklassensuffix' */
+
+/* Mit Bindestrich: */
+.moduletable-gamecenter {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  padding: 1px 0;
+  background-color: none;
+/*  min-height: 130px; */
+}
+.margin20{
+  margin-bottom: 20px;
+}
+.moduletable-gamecenter h3 {
+  padding: 0 10px;}
+
+.moduletable-kpcal {
+  padding: 0;}
+
+.moduletable-[MeineSuffix] {}
+
+/* Als Klasse (also mit einem Leerzeichen zu Beginn in der Modulklassensuffix) */
+.moduletable.[MeineSuffix] {}
+
+/* Facebook Like-Box */
+.fb-like-box, .fb-like-box span, .fb-like-box span iframe[style] { 
+  width: 100% !important; }
+
+/*                    ROSTER				*/
+.roster-header {
+  font: 24px/24px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px white;
+  text-transform: uppercase;}
+.roster-pos {
+  font: 80px/80px 'alternate_gothic_1Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px white;
+  color: #aaaaaa;
+  text-align: right;
+  margin-bottom: 80px;}
+.roster-name {
+  font: 38px/38px 'alternate_gothic_1Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px white;}
+.roster-vorname{
+  font: 26px/18px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px white;
+  color: #888888;}
+.roster-text{
+  font: 20px/20px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px white;
+  color: #888888;}
+img.roster-flag {
+  width: 40px;
+  margin-left: -3px;}
+img.roster-pic {
+  width: 100px;}
+   
+.accordion-group {
+    border: 2px solid #888888;}
+.accordion-inner {
+    border-top: 1px transparent none;}
+ 

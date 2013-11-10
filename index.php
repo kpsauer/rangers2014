@@ -1,5 +1,12 @@
 <?php defined( '_JEXEC' ) or die; 
-
+/*------------------------------------------------------------------------
+# author  Klaus-Peter Sauer
+# version   1.0.0 November 9, 2013
+# package München Rangers Joomla Template 2014
+# copyright Copyright © 2013 by Klaus-Peter Sauer - All rights reserved.
+# @license  http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+# Website http://www.muenchen-rangers.de
+-------------------------------------------------------------------------*/
 include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
 
 ?><!doctype html>
@@ -18,19 +25,194 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <?php if ($pie==1) : ?>
       <style> 
+      .tip, .kp-content, h3.moduletable , .moduletable, .mr-tab, .uneditable-input:focus, .game-center-away-team .score, .game-center-home-team .score, img.game-center-home-team, img.game-center-away-team
         {behavior:url(<?php echo $tpath; ?>/js/PIE.htc);}
       </style>
     <?php endif; ?>
   <![endif]-->
 </head>
+
+
+
   
 <body class="<?php echo (($menu->getActive() == $menu->getDefault()) ? ('front') : ('page')).' '.$active->alias.' '.$pageclass; ?>">
+  <a name="toTop" id="toTop" ></a>
+<!-- ************************************************
+*   T O P                     *
+* Module: teamlinks, topmenu, search        *
+* Other:  NONE                  *
+*************************************************/-->
+<!-- ***** HEADER ***** -->
+  <div id="bgheader">
+    <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-12">
+      <div class="row">
+        <?php if($this->countModules('teamlinks')) :?>
+          <div class="teams col-md-6 col-lg-6">
+            <jdoc:include type="modules" name="teamlinks" />
+          </div>
+        <?php endif; ?> 
+        <?php if($this->countModules('topmenu')) :?>
+          <div class="navbar navbar-inverse col-md-4 col-lg-4" role="navigation">
+            <div class="navbar-header">
+              <jdoc:include type="modules" name="topmenu" />
+            </div>
+          </div>
+        <?php endif; ?> 
+        <?php if($this->countModules('search')) :?>
+          <div class="mr-search col-md-2 col-lg-2">
+            <jdoc:include type="modules" name="search" />
+          </div>
+        <?php endif; ?> 
+      </div>
+      </div>
+    </div>
+    </div>    
+  </div>
+
+
+<!-- ****************************************************
+*   M I D D L E                     *
+* Module:   ticker, navbar, show, news, logout,   *
+*       sponsor1, component, message,       *
+*       gamecenter, user10, user11, user12,   *
+*       user13, sidebar             *
+* Other:  Hintergrundbild,              *
+*****************************************************/-->
+  <div id="bgoverall">
+    <div id="overall">
+
+    <!-- ***** TICKER ***** -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-2 hidden-xs">
+            <div id="ticker"> <jdoc:include type="modules" name="ticker" /> </div>
+          </div>
+        </div>      
+      </div>
+
+
+
+    <!-- ***** CONTENT ***** -->
+    </div>  
+  </div>
+<!-- ****************************************************
+*   B O T T O M                     *
+* Module:   sponsor2-1, sponsor2-2, sponsor2-3,   *
+*       sponsor2-4, sponsor2-5, sponsor2-6    *
+*       sitemap1, sitemap2, sitemap3, sitemap4, *
+*       sitemap5, facebook, expedia       *
+* Other:  Copyright                 *
+*****************************************************/-->
+  <div id="bgfooter">
+  <!-- ***** FACEBOOK & EXPEDIA ***** -->
+    <?php if($this->countModules('facebook or expedia')) :?>
+    <div class="container hidden-xs">
+      <div class="row">
+        <div class="facebook col-md-6 col-md-offset-1"><jdoc:include type="modules" name="facebook" /></div>
+        <div class="expedia col-md-5"><jdoc:include type="modules" name="expedia" /></div>
+      </div>
+    </div>
+    <?php endif; ?> 
+  <!-- ***** SPONSORS 2 ***** -->
+    <?php if($this->countModules('sponsor2-1 or sponsor2-2 or sponsor2-3 or sponsor2-4 or sponsor2-5 or sponsor2-6')) :?>
+    <div class="container">
+      <div class="row">
+        <div class="sponsor2 col-md-2"><jdoc:include type="modules" name="sponsor2-1" /></div>
+        <div class="sponsor2 col-md-2"><jdoc:include type="modules" name="sponsor2-2" /></div>
+        <div class="sponsor2 col-md-2"><jdoc:include type="modules" name="sponsor2-3" /></div>
+        <div class="sponsor2 col-md-2"><jdoc:include type="modules" name="sponsor2-4" /></div>
+        <div class="sponsor2 col-md-2"><jdoc:include type="modules" name="sponsor2-5" /></div>
+        <div class="sponsor2 col-md-2"><jdoc:include type="modules" name="sponsor2-6" /></div>
+      </div>
+    </div>
+    <?php endif; ?> 
+  <!-- ***** Footer for Sitemap ***** -->
+    <?php if($this->countModules('sitemap1 or sitemap2 or sitemap3 or sitemap4 or sitemap5')) :?>
+    <div class="container hidden-xs">
+      <div class="row">
+        <a name="toSiteMap" id="toSiteMap" ></a>
+        <div class="sitemap col-md-2 col-md-offset-1"><jdoc:include type="modules" name="sitemap1" /></div>
+        <div class="sitemap col-md-2"><jdoc:include type="modules" name="sitemap2" /></div>
+        <div class="sitemap col-md-2"><jdoc:include type="modules" name="sitemap3" /></div>
+        <div class="sitemap col-md-2"><jdoc:include type="modules" name="sitemap4" /></div>
+        <div class="sitemap col-md-2"><jdoc:include type="modules" name="sitemap5" /></div>
+      </div>
+    </div>
+    <?php endif; ?> 
+  <!-- ***** COPYRIGHT ***** -->
+    <div class="container">
+      <div class="row">
+        <div id="copyright">
+          <div class="col-md-12">
+            <?php echo JText::_('Footballclub M&uuml;nchen 1981 M&uuml;nchen Rangers e.V. &minus; American Football in M&uuml;nchen.<br /> 
+            &copy; 2009-'.date('Y ').' by KP &minus; Alle Rechte vorbehalten.')?> 
+            <a><img class="footer-logo" src="templates/rangers2013/images/rangers_stern_286.png" width="1" height="1" alt=""> </a>
+          </div>
+        </div>  
+      </div>
+    </div>  
+  </div>
+<!-- ************************************************
+*   F L O A T I N G   Modules           *
+* Module:   social, debug             *
+* Other:  To-Top Button, FB Code, Expedia Code  *
+*************************************************/-->
+<!-- ***** SOCIAL BAR ***** -->
+  <?php if($this->countModules('social')) :?>
+    <div id="social-buttons" class="right hidden-xs">
+      <jdoc:include type="modules" name="social"/>      
+    </div>
+  <?php endif; ?> 
+<!-- ***** Scroll To-Top Floating Button ***** -->
+  <!-- jquery --> 
+  <script type="text/javascript" src="<?php echo $tpath.'/js/jquery-1.7.2.min.js'; ?>"></script>
+  <!-- easing plugin ( optional ) -->
+  <script type="text/javascript" src="<?php echo $tpath.'/js/easing.js'; ?>"></script>
+  <!-- UItoTop plugin -->
+  <script type="text/javascript" src="<?php echo $tpath.'/js/jquery.ui.totop.js'; ?>" ></script>
+  <!-- Starting the plugin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      /*  var defaults = {
+          containerID: 'toTop', // fading element id
+        containerHoverID: 'toTopHover', // fading element hover id
+        scrollSpeed: 1200,
+        easingType: 'linear' }; */
+      $().UItoTop({ easingType: 'easeOutQuart' });
+    });
+  </script>
   
-  <!-- 
-    YOUR CODE HERE
-  -->
   <jdoc:include type="modules" name="debug" />
 </body>
+<!-- ********************************************
+*   P I W I K -> noch einfügen!!!       *
+*************************************************/-->
+
+<div id="fb-root"></div>
+
+<!-- ********************************************
+*   EXPEDIA CODE                      *
+*************************************************/
+<script type='text/javascript' src='http://widgets.partners.expedia.de/daily/shared/affiliates/WidgetService.aspx?partner=cobrand&eapid=13858-6&omnituretag1key=mdpcid&omnituretag1value=wpk.DE.13858.WD00002&size=300x250&window=new&products=hotels%2cflighthotel%2cflights%2ccars%2cpackageholidays%2cactivities&widgetname=searchform&divid=searchform_634758699966593314&langid=1031'></script> 
+-->
+
+<!-- ********************************************
+*   FACEBOOK CODE                     *
+*************************************************/
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/de_DE/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+-->
+<!-- ********************************************
+*   BOOTSTRAP MENU CODE               *
+*************************************************/-->
+
 
 </html>
 
