@@ -38,9 +38,9 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
 <body class="<?php echo (($menu->getActive() == $menu->getDefault()) ? ('front') : ('page')).' '.$active->alias.' '.$pageclass; ?>">
   <a name="toTop" id="toTop" ></a>
 <!-- ************************************************
-*   T O P                     *
-* Module: teamlinks, topmenu, search        *
-* Other:  NONE                  *
+*   T O P                                           *
+* Module: teamlinks, topmenu, search                *
+* Other:  NONE                                      *
 *************************************************/-->
 <!-- ***** HEADER ***** -->
   <div id="bgheader">
@@ -73,17 +73,28 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
 
 
 <!-- ****************************************************
-*   M I D D L E                     *
-* Module:   ticker, navbar, show, news, logout,   *
-*       sponsor1, component, message,       *
-*       gamecenter, user10, user11, user12,   *
-*       user13, sidebar             *
-* Other:  Hintergrundbild,              *
+*   M I D D L E                                         *
+* Module:   ticker, navbar, show, news, logout,         *
+*           sponsor1, component, message,               *
+*           gamecenter, user10, user11, user12,         *
+*           user13, sidebar                             *
+* Other:    Hintergrundbild                             *
 *****************************************************/-->
   <div id="bgoverall">
     <div id="overall">
 
+    <!-- ***** München Rangers Schriftzug ***** -->
+      <div class="container">
+        <div class="row mr-schriftzug">
+          <div class="col-md-10 col-md-offset-0">
+            <img src="templates/rangers2014/images/rangers_logo_schriftzug.png" class="mr-muenchen" alt="xx"> 
+          </div>
+        </div>
+      </div>
+
     <!-- ***** TICKER ***** -->
+      <!-- Prüfen ob TICKER vorhanden -->
+      <?php if($this->countModules('ticker')) :?>
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-2 hidden-xs">
@@ -91,19 +102,83 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
           </div>
         </div>      
       </div>
+      <?php endif; ?> 
+
+    <!-- ***** NAVBAR JoomlaCK Megamenu***** -->  
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12"> <jdoc:include type="modules" name="navbar" /> </div>      
+        </div>      
+      </div>
+
+    <!-- ***** SLIDE SHOW + NEWS MODULE ***** -->
+      <?php if($this->countModules('show or news')) :?>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-8"> <jdoc:include type="modules" name="show" /> </div>
+              <div class="col-md-4"> <jdoc:include type="modules" name="news" style="xhtml" /> </div> 
+            </div> 
+          </div>
+        </div>
+      </div>
+      <?php endif; ?> 
+
+    <!-- ***** MAIN SPONSORS & LOGOUT ***** -->
+      <!-- Prüfen ob LOGOUT vorhanden -->
+      <?php if($this->countModules('logout')) :?>
+      <!-- Wenn LOGOUT vorhanden -> geteilter Inhalt 10:2 -->
+        <?php if($this->countModules('sponsor1')) :?>
+        <div class="container">
+          <div class="row"> 
+            <div class="col-md-10"> 
+              <div class="sponsor1 kp-content"> <jdoc:include type="modules" name="sponsor1" /> </div>
+            </div>
+            <div class="col-md-2"> 
+              <div class="logout kp-content"> <jdoc:include type="modules" name="logout" /> </div>
+            </div>
+          </div>
+        </div>
+        <?php endif; ?> 
+
+      <?php else: ?> 
+      <!-- Wenn LOGOUT nicht vorhanden -> ganze Breite 12 columns für Content wie z.B. Forum -->
+        <?php if($this->countModules('sponsor1')) :?>
+        <div class="container">
+          <div class="row"> 
+            <div class="col-md-12"> 
+              <div class="sponsor1 kp-content "> <jdoc:include type="modules" name="sponsor1" /> </div>
+            </div>
+          </div>
+        </div>
+        <?php endif; ?> 
+      <?php endif; ?> 
 
 
+    <!-- ***** MAIN CONTENT ***** -->
+      <div class="container">
+        <div class="row">
+          <!-- Wenn SIDEBAR nicht vorhanden -> ganze Breite 12 columns für Content wie z.B. Forum -->
+            <div class="col-md-12">
+              <div class="kp-content">
+                <jdoc:include type="message" />
+                <div class="margin-content"> <jdoc:include type="component" /> </div> 
+              </div> 
+            </div>
+        </div>
+      </div>
 
-    <!-- ***** CONTENT ***** -->
+
     </div>  
   </div>
 <!-- ****************************************************
-*   B O T T O M                     *
-* Module:   sponsor2-1, sponsor2-2, sponsor2-3,   *
-*       sponsor2-4, sponsor2-5, sponsor2-6    *
-*       sitemap1, sitemap2, sitemap3, sitemap4, *
-*       sitemap5, facebook, expedia       *
-* Other:  Copyright                 *
+*   B O T T O M                                         *
+* Module:   sponsor2-1, sponsor2-2, sponsor2-3,         *
+*           sponsor2-4, sponsor2-5, sponsor2-6          *
+*           sitemap1, sitemap2, sitemap3, sitemap4,     *
+*           sitemap5, facebook, expedia                 *
+* Other:    Copyright                                   *
 *****************************************************/-->
   <div id="bgfooter">
   <!-- ***** FACEBOOK & EXPEDIA ***** -->
@@ -167,7 +242,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
   <?php endif; ?> 
 <!-- ***** Scroll To-Top Floating Button ***** -->
   <!-- jquery --> 
-  <script type="text/javascript" src="<?php echo $tpath.'/js/jquery-1.7.2.min.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $tpath.'/js/jquery-1.10.2.min.js'; ?>"></script>
   <!-- easing plugin ( optional ) -->
   <script type="text/javascript" src="<?php echo $tpath.'/js/easing.js'; ?>"></script>
   <!-- UItoTop plugin -->
@@ -194,13 +269,12 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
 
 <!-- ********************************************
 *   EXPEDIA CODE                      *
-*************************************************/
+*************************************************/-->
 <script type='text/javascript' src='http://widgets.partners.expedia.de/daily/shared/affiliates/WidgetService.aspx?partner=cobrand&eapid=13858-6&omnituretag1key=mdpcid&omnituretag1value=wpk.DE.13858.WD00002&size=300x250&window=new&products=hotels%2cflighthotel%2cflights%2ccars%2cpackageholidays%2cactivities&widgetname=searchform&divid=searchform_634758699966593314&langid=1031'></script> 
--->
 
 <!-- ********************************************
 *   FACEBOOK CODE                     *
-*************************************************/
+*************************************************/-->
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -208,7 +282,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
   js.src = "//connect.facebook.net/de_DE/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
--->
+
 <!-- ********************************************
 *   BOOTSTRAP MENU CODE               *
 *************************************************/-->

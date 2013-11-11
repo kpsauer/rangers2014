@@ -7,18 +7,40 @@
 # Website http://www.muenchen-rangers.de
 -------------------------------------------------------------------------*/
 // normalize
-@import 'normalize.less';
+/* @import 'normalize.less'; */
 @import 'bootstrap/bootstrap.less';
+@import 'font-awesome/font-awesome.less';
 
 // colors
 @back-color: #222222;
 @white: #FFFFFF;
+@whitesmoke: #F5F5F5;
 @black: #000000;
 @orange: #FF6600;
 @anthrazit: #1b1b1b;
-@hellgrau: #777777;
+@grau: #808080;
+@taupe-grau: #8B8589;
+@lightgray: #DDDDDD;
 
 // MIXINS
+.textshadow-white {
+  text-shadow: -1px 1px 1px white;
+}
+.schrift-lg {
+  font-size: 14px;
+}  
+.schrift-md {
+  font-size: 13px;
+}  
+.schrift-sm {
+  font-size: 12px;
+}  
+.schrift-xs {
+  font-size: 11px;
+}  
+.schrift-xxs {
+  font-size: 10px;
+}  
 .rounded-corners (@radius: 4px) {
   -webkit-border-radius: @radius;
   -moz-border-radius: @radius;
@@ -26,6 +48,17 @@
   -o-border-radius: @radius;
   border-radius: @radius;
 }
+.transparent-whitesmoke {
+   /* Fallback for web browsers that doesn't support RGBa background-color:#f5f5f5;*/
+  background: rgb(245, 245, 245);
+  /* RGBa with 0.8 opacity */
+  background: rgba(245, 245, 245, 0.8);
+  /* For IE 5.5 - 7
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCf5f5f5, endColorstr=#CCf5f5f5);*/
+  /* For IE 8*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCf5f5f5, endColorstr=#CCf5f5f5)";
+}
+
 /**************************************************************************************************************************************
 ***************************************************************************************************************************************
                     FONTS
@@ -62,9 +95,9 @@
     font-style: normal; 
 }
 .componentheading, 
-h1 {font: 46px/54px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px white;}
+h1 {font: 46px/54px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; .textshadow-white;}
 h2 {font: 38px/46px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; }
-h3 {font: 32px/38px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px white;}
+h3 {font: 32px/38px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; .textshadow-white;}
 h4 {font: 28px/34px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
 h5 {font: 22px/30px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
 h6 {font: 16px/24px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
@@ -75,7 +108,7 @@ html {
   overflow-y: scroll;
 }
 body {
-  font-size: 14px;
+  .schrift-lg;
   margin-top:0px;
   background-color:@back-color;
 }
@@ -86,16 +119,6 @@ a {
 a:hover, a:focus {
   color:@anthrazit;
   text-decoration: none;
-}
-/* HINTERGRUNDBILD */ 
-#bgoverall {
-  height:100%; 
-  min-height: 1100px; 
-  margin:0 auto; 
-  text-align:left; 
-  width:100%;
-    z-index: 0; 
-  background:url(../images/background/background.jpg) no-repeat top center @back-color;
 }
 /**************************************************************************************************************************************
 ***************************************************************************************************************************************
@@ -148,7 +171,7 @@ div#bgheader .teams a {
   width: 20px;
 }
 /**************************************************************************************************************************************
-                HEADER Topmenu 
+    HEADER Topmenu 
 ***************************************************************************************************************************************/
 #bgheader .container .row .navbar {
   margin-bottom: 0px;
@@ -162,7 +185,7 @@ div#bgheader .teams a {
 #bgheader .navbar .nav > li > a {
     float: none;
     padding: 8px 8px;
-    font-size: 13px;
+    .schrift-md;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
@@ -179,7 +202,7 @@ div#bgheader .teams a {
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff222222', GradientType=0);
 }
 /**************************************************************************************************************************************
-                HEADER SEARCH
+    HEADER SEARCH
 ***************************************************************************************************************************************/
 .mr-search {
   padding-right: 0px;
@@ -191,7 +214,7 @@ div#bgheader .teams a {
 /*  height: 14px; */
   padding: 4px 6px;
   margin-bottom: 5px;
-  font-size: 10px;
+  .schrift-xxs;
   line-height: 14px;
   .rounded-corners;
 }
@@ -224,19 +247,122 @@ input[type="color"]:focus,
                     MIDDLE
 ***************************************************************************************************************************************
 ***************************************************************************************************************************************/
-
+/* HINTERGRUNDBILD */ 
+#bgoverall {
+  height:100%; 
+  min-height: 1100px; 
+  margin:0 auto; 
+  text-align:left; 
+  width:100%;
+  z-index: 0; 
+  background:url(../images/background/background.jpg) no-repeat top center @back-color;
+}
+#bgoverall .page-header {
+  border-bottom: none;
+  margin: 0;
+}
+.kp-content {
+  .rounded-corners;
+  .transparent-whitesmoke;
+}
+.margin-content{
+  margin: 0 15px 20px;
+  padding: 10px 0;
+}
+/**************************************************************************************************************************************
+    Login Form 
+***************************************************************************************************************************************/
+.control-group {
+  margin-bottom: 9px;
+}
+legend + .control-group {
+  margin-top: 18px;
+  -webkit-margin-top-collapse: separate;
+}
+.form-horizontal .control-group {
+  margin-bottom: 18px;
+  *zoom: 1;
+}
+.form-horizontal .control-group:before,
+.form-horizontal .control-group:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.form-horizontal .control-group:after {
+  clear: both;
+}
+.form-horizontal .control-label {
+  float: left;
+  width: 160px;
+  padding-top: 5px;
+  text-align: right;
+}
+.form-horizontal .controls {
+  *display: inline-block;
+  *padding-left: 20px;
+  margin-left: 180px;
+  *margin-left: 0;
+}
+.form-horizontal .controls:first-child {
+  *padding-left: 180px;
+}
+.form-horizontal .help-block {
+  margin-bottom: 0;
+}
+.form-horizontal input + .help-block,
+.form-horizontal select + .help-block,
+.form-horizontal textarea + .help-block,
+.form-horizontal .uneditable-input + .help-block,
+.form-horizontal .input-prepend + .help-block,
+.form-horizontal .input-append + .help-block {
+  margin-top: 9px;
+}
+.form-horizontal .form-actions {
+  padding-left: 180px;
+}
+div.login form.form-horizontal fieldset.well div.control-group div.controls input{
+  .schrift-lg;
+}
+/**************************************************************************************************************************************
+    Moduletables 
+***************************************************************************************************************************************/
+.moduletable {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  padding: 1px 0;
+  .rounded-corners;
+  .transparent-whitesmoke;
+}
+.moduletable h3 {
+  padding: 0 10px;
+  margin: 5px 0;
+  .rounded-corners;
+}
+.moduletable p {
+  padding: 0 10px;}
+/**************************************************************************************************************************************
+    Rangers Schriftzug
+***************************************************************************************************************************************/
+.mr-schriftzug{ 
+  margin:10px 0 ;
+}
+div#bgoverall div#overall img.mr-muenchen {
+  height: 80px;
+  margin: -5px 0 5px 0;
+}
 /**************************************************************************************************************************************
     TICKER
 ***************************************************************************************************************************************/
 #ticker {
-  margin: 7px 0px;
+  margin: 12px 0px;
   min-height: 14px;
 }
 #ticker .gkHighlighterInterface {
   padding: 3px 7px;
 }
 #ticker .gkHighlighterInterface span.text { 
-  font-size: 14px; 
+  .schrift-lg; 
 }
 #ticker .gkHighlighterWrapperSub {
   min-height: 24px;
@@ -247,21 +373,134 @@ input[type="color"]:focus,
   font-weight:bold;
 }
 #ticker .gkHighlighterGK5 {
-  border: 0px solid #DDDDDD;
+  border: 0px solid @lightgray;
   width: 100% !important;
   .rounded-corners;
-  /* Fallback for web browsers that doesn't support RGBa background-color:#f5f5f5;*/
-  background: rgb(245, 245, 245);
-  /* RGBa with 0.8 opacity */
-  background: rgba(245, 245, 245, 0.8);
-  /* For IE 5.5 - 7
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCf5f5f5, endColorstr=#CCf5f5f5);*/
-  /* For IE 8*/
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCf5f5f5, endColorstr=#CCf5f5f5)";
+  .transparent-whitesmoke;
 }
 div#ticker div#gkHighlighterGK5-0.gkHighlighterGK5 div.gkHighlighterInterface {
   background-color: @orange;
   .rounded-corners;
+}
+/**************************************************************************************************************************************
+                LOGO -> NavBar
+***************************************************************************************************************************************/
+/* NAVBAR Menü Maximneu CK Logo Level1 */
+div#bgoverall div#mainmenu_mr.maximenuckh div.maxiroundedcenter ul.menu li.maximenucklogo a img{
+    width: 286px;
+    margin: -35px 0 0 -150px !important;
+}
+div#mr-logo {
+  height: 0px;
+}
+div#mr-logo a.rangers_logo img {
+  overflow:visible; 
+  position:relative;
+  top: -71px;
+  left: -140px;
+  z-index: 5;
+}
+/**************************************************************************************************************************************
+              NAVBAR Maximneu CK
+***************************************************************************************************************************************/
+div#bgoverall div#mainmenu_mr ul.maximenuck:after{ 
+  display: none;
+}  
+  /* Menü Hintergrund + Abstand */
+div#bgoverall div#mainmenu_mr ul.maximenuck {
+  border: 0px;
+  margin: 0 auto 10px;
+  .rounded-corners;
+  .transparent-whitesmoke;
+}
+  /* NAVBAR Maximneu CK Menü Level1 Hintergrund + Abstand */
+div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck.level1 {
+  border: 0px solid @anthrazit;
+  margin-top: 4px;    
+  margin-right: 12px;
+}
+  /* MenüNAVBAR Maximneu CK Level1 Farbe, Größe + Abstand */
+div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck.level1 > a  {
+  color: @anthrazit ;
+  font: 24px/22px 'alternate_gothic_3Rg', sans-serif; 
+  min-height: 30px;
+  text-shadow: 1px 1px 1px @white;
+}
+div#bgoverall div#mainmenu_mr ul.maximenuck li.level1.parent > a, 
+div#mainmenu_mr ul.maximenuck li.level1.parent > span.separator {
+  padding-right: 18px;
+  }
+  /* Dropdown Hintergrund */  
+div#bgoverall div#mainmenu_mr ul.maximenuck li div.floatck {
+  border: medium none;
+  -webkit-border-radius: 0 0 4px 4px;
+     -moz-border-radius: 0 0 4px 4px;
+          border-radius: 0 0 4px 4px;
+}
+div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck ul.maximenuck2 li a {
+  color:inherit;  }
+  /* Schriftfarbe + Größe + Mouseover */
+div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck ul.maximenuck2 li:hover > a,
+div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck ul.maximenuck2 li:hover > h2 a,
+div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck ul.maximenuck2 li:hover > h3 a,
+div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck ul.maximenuck2 li.active > a {
+  color:@orange !important;
+  text-decoration: none;
+  background: transparent !important;
+}          
+/* Separators */
+div#bgoverall div#mainmenu_mr.maximenuckh ul.maximenuck2 li.maximenuck div.mr-header {
+  border-bottom: 1px solid @grau;
+  margin: 0 ;
+  padding-bottom: 5px;
+}
+div#bgoverall div#mainmenu_mr.maximenuckh ul.maximenuck2 li.maximenuck div span.separator span.titreck {
+  float: none !important;
+  color: @grau;
+  font: 24px/24px 'alternate_gothic_3Rg', sans-serif; 
+  min-height: 17px;
+  text-decoration: none;
+}
+div#bgoverall div#mainmenu_mr.maximenuckh ul.maximenuck2 li.maximenuck div span.separator span.descck {
+  float: none !important;
+  color: @grau;
+  font: 14px/14px 'alternate_gothic_3Rg', sans-serif; 
+  min-height: 17px;
+  text-decoration: none;
+}
+div#bgoverall div#mainmenu_mr ul.maximenuck li ul.maximenuck2 li.blackbox,
+div#bgoverall div#mainmenu_mr ul.maximenuck li ul.maximenuck2 li.greybox  {
+  text-align: center;
+  line-height: 28px;
+}
+
+
+/* Slideshow 
+*********************************************/
+div#bgoverall div.slideshowck-kpslideshow div.camera_pag ul.camera_pag_ul li img.camera_thumb{
+  top: 24px !important;} 
+
+/**************************************************************************************************************************************
+    Latest News
+***************************************************************************************************************************************/
+.moduletable ul.latestnews,
+.moduletable ul.eventlistmod { 
+  margin: 0 10px 10px;
+  padding: 0;
+  list-style: none outside none;
+}
+.moduletable ul.latestnews li,
+.moduletable ul.eventlistmod li  {
+  border-bottom: 1px dotted #999999;
+  padding: 5px 0;
+} 
+.moduletable ul.latestnews li a,
+.moduletable ul.eventlistmod li span.location a {
+  line-height: 18px;
+  font-weight: bold;
+}
+.moduletable ul.eventlistmod li span.date {
+  line-height: 18px;  
 }
 /**************************************************************************************************************************************
     SPONSOREN
@@ -301,13 +540,13 @@ img.sponsor-detail {
     SITEMAP
 ***************************************************************************************************************************************/
 .sitemap  {
-  color:@hellgrau; 
+  color:@grau; 
   padding-bottom: 20px; 
 }
 .sitemap p { 
-  font-size:14px;
+  .schrift-lg;
   margin: 0;
-  border-bottom: 1px dotted @hellgrau;
+  border-bottom: 1px dotted @grau;
   padding: 5px 0;
 }
 .sitemap h1 { 
@@ -316,7 +555,7 @@ img.sponsor-detail {
 }
 div.sitemap a:link, div.sitemap a:visited {
   border: 0;
-  color:@hellgrau; 
+  color:@grau; 
   font-weight:normal; 
   text-decoration:none;
 }
@@ -358,7 +597,7 @@ div.sitemap a:hover {
 .social-buttons .social-text {
   display: none;
   float: left;
-  font-size: 12px;
+  .schrift-sm;
   font-weight: bold;
   margin: 11px 0 11px 40px;
   white-space: nowrap;
@@ -405,7 +644,7 @@ div.sitemap a:hover {
   background-color: #E15A00;
 }
 .social-buttons .social-text { 
-  color: #F5F5F5;
+  color: @whitesmoke;
 }
 /**************************************************************************************************************************************
     SCROLL TO TOP 
@@ -421,6 +660,7 @@ div.sitemap a:hover {
   height:51px;
   border:none;
   text-indent:100%;
+  z-index: 2000;
   background:url(../images/ui.totop.png) no-repeat left top;
 }
 #toTopHover {
@@ -430,6 +670,7 @@ div.sitemap a:hover {
   display:block;
   overflow:hidden;
   float:left;
+  z-index: 2000;
   opacity: 0;
   -moz-opacity: 0;
   filter:alpha(opacity=0);
@@ -441,7 +682,7 @@ div.sitemap a:hover {
     COPYRIGHT
 ***************************************************************************************************************************************/
 #copyright {
-  color: @hellgrau;
+  color: @grau;
   text-align: center;
   }
 img.footer-logo  {
@@ -453,9 +694,145 @@ img.footer-logo  {
 
 
 /**************************************************************************************************************************************
-    LAYOUT
+***************************************************************************************************************************************
+                    OTHER LAYOUT
+***************************************************************************************************************************************
 ***************************************************************************************************************************************/
-
+/**************************************************************************************************************************************
+    Pagination
+***************************************************************************************************************************************/
+.pagination {
+  margin: 18px 0;
+  width:100%;
+  text-align: center;
+}
+.counter{
+  padding: 5px 12px;
+  line-height: 18px;
+}
+.pagination ul {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-left: 0;
+  margin-bottom: 0;
+  .rounded-corners;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.pagination ul > li {
+  display: inline;
+}
+.pagination ul > li > a,
+.pagination ul > li > span {
+  float: left;
+  padding: 4px 12px;
+  line-height: 18px;
+  text-decoration: none;
+  background-color: @white;
+  border: 1px solid @lightgray;
+  border-left-width: 0;
+}
+.pagination ul > li > a:hover,
+.pagination ul > li > a:focus,
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+  background-color: @whitesmoke;
+}
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+  color: #999;
+  cursor: default;
+}
+.pagination ul > .disabled > span,
+.pagination ul > .disabled > a,
+.pagination ul > .disabled > a:hover,
+.pagination ul > .disabled > a:focus {
+  color: #999;
+  background-color: @whitesmoke;
+  cursor: default;
+}
+.pagination ul > li:first-child > a,
+.pagination ul > li:first-child > span {
+  border-left-width: 1px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-bottom-left-radius: 4px;
+}
+.pagination ul > li:last-child > a,
+.pagination ul > li:last-child > span {
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  border-bottom-right-radius: 4px;
+}
+.pagination-centered {
+  text-align: center;
+}
+.pagination-right {
+  text-align: right;
+}
+.pagination-large ul > li > a,
+.pagination-large ul > li > span {
+  padding: 11px 19px;
+  font-size: 16.25px;
+}
+.pagination-large ul > li:first-child > a,
+.pagination-large ul > li:first-child > span {
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  border-top-left-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  border-bottom-left-radius: 6px;
+}
+.pagination-large ul > li:last-child > a,
+.pagination-large ul > li:last-child > span {
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  border-bottom-right-radius: 6px;
+}
+.pagination-mini ul > li:first-child > a,
+.pagination-mini ul > li:first-child > span,
+.pagination-small ul > li:first-child > a,
+.pagination-small ul > li:first-child > span {
+  -webkit-border-top-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-left-radius: 3px;
+}
+.pagination-mini ul > li:last-child > a,
+.pagination-mini ul > li:last-child > span,
+.pagination-small ul > li:last-child > a,
+.pagination-small ul > li:last-child > span {
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-bottom-right-radius: 3px;
+}
+.pagination-small ul > li > a,
+.pagination-small ul > li > span {
+  padding: 2px 10px;
+  .schrift-sm;
+}
+.pagination-mini ul > li > a,
+.pagination-mini ul > li > span {
+  padding: 0 6px;
+  font-size: 9.75px;
+}
 
 
 /**************************************************************************************************************************************
@@ -479,8 +856,6 @@ img.footer-logo  {
 .ie7 .group {
   zoom: 1;
 }
-
-
 
 /**************************************************************************************************************************************
 **************************************************************************************************************************************
