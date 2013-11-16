@@ -12,7 +12,8 @@
 @import 'font-awesome/font-awesome.less';
 
 // colors
-@back-color: #222222;
+// @back-color: #222222;
+@back-color: #000000;
 @white: #FFFFFF;
 @whitesmoke: #F5F5F5;
 @black: #000000;
@@ -344,20 +345,40 @@ div.login form.form-horizontal fieldset.well div.control-group div.controls inpu
 /**************************************************************************************************************************************
     Rangers Schriftzug
 ***************************************************************************************************************************************/
-.mr-schriftzug{ 
-  margin:10px 0 ;
+.mr-schriftzug-header {
+  margin: 5px 0 20px 7px;
+}
+.mr-schriftzug-header-ticker {
+  margin: 5px 0 5px 7px;
+}
+.mr-schriftzug { 
+  margin: 0 0 0 7px;
+}
+.mr-schriftzug-ticker{
+  margin: -5px 0 20px 7px;
 }
 div#bgoverall div#overall img.mr-muenchen {
-  height: 80px;
+  height: 100%;
   margin: -5px 0 5px 0;
 }
+
 /**************************************************************************************************************************************
     TICKER
 ***************************************************************************************************************************************/
-#ticker {
+.ticker-header {
+  margin: 0 0 12px 0px;
+  min-height: 14px;
+}
+.ticker-mit-schrift {
+  margin: 40px 0 0 0 ;
+  min-height: 14px;
+}
+.ticker-solo {
   margin: 12px 0px;
   min-height: 14px;
 }
+
+#ticker {}
 #ticker .gkHighlighterInterface {
   padding: 3px 7px;
 }
@@ -388,7 +409,7 @@ div#ticker div#gkHighlighterGK5-0.gkHighlighterGK5 div.gkHighlighterInterface {
 /* NAVBAR Menü Maximneu CK Logo Level1 */
 div#bgoverall div#mainmenu_mr.maximenuckh div.maxiroundedcenter ul.menu li.maximenucklogo a img{
     width: 286px;
-    margin: -35px 0 0 -150px !important;
+    margin: -25px 0 0 -150px !important;
 }
 div#mr-logo {
   height: 0px;

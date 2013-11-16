@@ -19,6 +19,7 @@
 			<li>teamlinks - Liga Logos & Weblinks in der Titelzeile</li>
 			<li>topmenu - Menu  in der Titelzeile</li>
 			<li>search - Suchfeld in der Titelzeile</li>
+			<li>schriftzug - Rangers Schriftzug über dem Hauptmenu</li>
 			<li>ticker - Rangers News Ticker über dem Hauptmenu</li>
 			<li>navbar - Hauptmenu mit Rangers Stern</li>
 			<li>show - Slideshow Modul</li>
@@ -73,6 +74,7 @@
 		<position>topmenu</position>
 		<position>search</position>
 		<position>ticker</position>
+		<position>schriftzug</position>
 		<position>sidebar</position>
 		<position>teamlinks</position>
 		<position>sponsor1</position>

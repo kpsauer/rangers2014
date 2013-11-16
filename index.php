@@ -42,34 +42,94 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
 * Module: teamlinks, topmenu, search                *
 * Other:  NONE                                      *
 *************************************************/-->
-<!-- ***** HEADER ***** -->
+<!-- ***** HEADER - R E G U L Ä R   *****-->
   <div id="bgheader">
     <div class="container">
-    <div class="row">
-      <div class="col-md-12 col-lg-12">
       <div class="row">
-        <?php if($this->countModules('teamlinks')) :?>
-          <div class="teams col-md-6 col-lg-6">
-            <jdoc:include type="modules" name="teamlinks" />
+        <div class="col-md-12 col-lg-12">
+          <div class="row">
+            <?php if($this->countModules('teamlinks')) :?>
+              <div class="teams col-md-6 col-lg-6">
+                <jdoc:include type="modules" name="teamlinks" />
+              </div>
+            <?php endif; ?> 
+            <?php if($this->countModules('topmenu')) :?>
+              <div class="navbar navbar-inverse col-md-4 col-lg-4" role="navigation">
+                <div class="navbar-header">
+                  <jdoc:include type="modules" name="topmenu" />
+                </div>
+              </div>
+            <?php endif; ?> 
+            <?php if($this->countModules('search')) :?>
+              <div class="mr-search col-md-2 col-lg-2">
+                <jdoc:include type="modules" name="search" />
+              </div>
+            <?php endif; ?> 
           </div>
-        <?php endif; ?> 
-        <?php if($this->countModules('topmenu')) :?>
-          <div class="navbar navbar-inverse col-md-4 col-lg-4" role="navigation">
-            <div class="navbar-header">
-              <jdoc:include type="modules" name="topmenu" />
-            </div>
-          </div>
-        <?php endif; ?> 
-        <?php if($this->countModules('search')) :?>
-          <div class="mr-search col-md-2 col-lg-2">
-            <jdoc:include type="modules" name="search" />
-          </div>
-        <?php endif; ?> 
+        </div>
       </div>
-      </div>
-    </div>
     </div>    
-  </div>
+  </div> 
+
+<!-- ***** HEADER - A L T E R N A T I V   ***** 
+  <div id="bgheader">
+    <div class="container">
+      <div class="row">-->
+        <!-- ***** München Rangers Schriftzug ***** 
+          <?php if($this->countModules('schriftzug')) :?>
+            <div class="col-md-4">
+
+              <?php if($this->countModules('ticker')) :?>
+                <div class="mr-schriftzug-header-ticker">
+                  <jdoc:include type="modules" name="schriftzug" />
+                </div>
+
+              <?php else: ?> 
+                <div class="mr-schriftzug-header">
+                  <jdoc:include type="modules" name="schriftzug" />
+                </div>
+              <?php endif; ?> 
+            </div>
+          <?php endif; ?> 
+
+        <div class="col-md-8">
+          <div class="row">
+            <?php if($this->countModules('topmenu')) :?>
+              <div class="navbar navbar-inverse col-md-8" role="navigation">
+                <div class="navbar-header">
+                  <jdoc:include type="modules" name="topmenu" />
+                </div>
+              </div>
+            <?php endif; ?> 
+            <?php if($this->countModules('search')) :?>
+              <div class="mr-search col-md-4">
+                <jdoc:include type="modules" name="search" />
+              </div>
+            <?php endif; ?> 
+          </div>
+          <div class="row">
+            <?php if($this->countModules('teamlinks')) :?>
+              <div class="teams col-md-8 col-md-offset-4">
+                <jdoc:include type="modules" name="teamlinks" />
+              </div>
+            <?php endif; ?> 
+          </div>
+
+        </div>
+      </div>-->
+      <!-- ***** TICKER ***** -->
+        <!-- Prüfen ob TICKER vorhanden 
+        <?php if($this->countModules('ticker')) :?>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-2 hidden-xs">
+              <div id="ticker" class="ticker-header"> <jdoc:include type="modules" name="ticker" /> </div>
+            </div>
+          </div>      
+        <?php endif; ?> 
+
+
+    </div>    
+  </div>-->
 
 
 <!-- ****************************************************
@@ -83,27 +143,49 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
   <div id="bgoverall">
     <div id="overall">
 
-    <!-- ***** München Rangers Schriftzug ***** -->
-      <div class="container">
-        <div class="row mr-schriftzug">
-          <div class="col-md-10 col-md-offset-0">
-            <img src="templates/rangers2014/images/rangers_logo_schriftzug.png" class="mr-muenchen" alt="xx"> 
+    <!-- ***** München Rangers Schriftzug und Ticker ***** 
+      <?php if($this->countModules('schriftzug and ticker')) :?>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="mr-schriftzug-ticker"> <jdoc:include type="modules" name="schriftzug" /> </div>
+            </div>
+            <div class="col-md-8 hidden-xs ticker-mit-schrift">
+              <div id="ticker"> <jdoc:include type="modules" name="ticker" /> </div>
+            </div>
           </div>
         </div>
-      </div>
 
-    <!-- ***** TICKER ***** -->
-      <!-- Prüfen ob TICKER vorhanden -->
-      <?php if($this->countModules('ticker')) :?>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10 col-md-offset-2 hidden-xs">
-            <div id="ticker"> <jdoc:include type="modules" name="ticker" /> </div>
+      <?php else: ?> -->
+      <!-- ***** München Rangers Schriftzug ***** 
+        <?php if($this->countModules('schriftzug')) :?>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="mr-schriftzug">
+                <jdoc:include type="modules" name="schriftzug" />
+              </div>
+            </div>
           </div>
-        </div>      
-      </div>
-      <?php endif; ?> 
+        </div>
+        <?php endif; ?> -->
 
+      <!-- ***** TICKER ***** -->
+        <!-- Prüfen ob TICKER vorhanden 
+        <?php if($this->countModules('ticker')) :?>-->
+ 
+ <!--       <?php endif; ?> 
+
+      <?php endif; ?> -->
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-2 hidden-xs">
+              <div id="ticker" class="ticker-solo"> <jdoc:include type="modules" name="ticker" /> </div>
+            </div>
+          </div>      
+        </div>
+ 
     <!-- ***** NAVBAR JoomlaCK Megamenu***** -->  
       <div class="container">
         <div class="row">
@@ -159,16 +241,87 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
     <!-- ***** MAIN CONTENT ***** -->
       <div class="container">
         <div class="row">
+
+        <!-- Prüfen ob SIDEBAR vorhanden -->
+        <?php if($this->countModules('sidebar')) :?>
+        <!-- Wenn SIDEBAR vorhanden -> geteilter Inhalt 9:3 -->
+          <div class="col-md-9">
+            <div class="kp-content">
+              <?php if (!empty($app->getMessageQueue)) : ?>
+                <jdoc:include type="message" />
+              <?php endif ?>
+              <?php if($this->countModules('show')) :?>
+                <jdoc:include type="component" />        
+              <?php else: ?> 
+                <div class="margin-content"> <jdoc:include type="component" /> </div> 
+              <?php endif; ?> 
+            </div> 
+            <div class="row">
+              <div class="col-md-8">
+                <?php if($this->countModules('gamecenter')) :?> 
+                <div class="kp-content margin20 hidden-xs">
+                  <jdoc:include type="modules" name="gamecenter" style="xhtml" />
+                  <!-- ***** Bootstrap CAROUSEL ***** -->
+                  <script type="text/javascript"> 
+                    $(document).ready(function() {
+                      $('.carousel').each(function(){
+                      $(this).carousel({
+                        interval: 600000
+                      });
+                      $('.carousel').carousel('pause');
+                      });
+                    });
+                    if (typeof jQuery != 'undefined' && typeof MooTools != 'undefined' ) {
+                        Element.implement({
+                            slide: function(how, mode){
+                                return this;
+                            }
+                        });
+                    }
+                  </script>
+                </div>
+                <?php endif; ?>  
+
+                <?php if($this->countModules('user10')) :?> 
+                  <div class="">
+                    <jdoc:include type="modules" name="user10" style="xhtml" />
+                  </div> 
+                <?php endif; ?>  
+
+              </div> 
+              <div class="col-md-4 hidden-xs">
+                <?php if($this->countModules('user11')) :?> 
+                  <jdoc:include type="modules" name="user11" style="xhtml" />
+                <?php endif; ?>  
+              </div> 
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <?php if($this->countModules('user12')) :?> 
+                  <jdoc:include type="modules" name="user12" style="xhtml" />
+                <?php endif; ?>  
+              </div> 
+              <div class="col-md-6">
+                <?php if($this->countModules('user13')) :?> 
+                  <jdoc:include type="modules" name="user13" style="xhtml" />
+                <?php endif; ?>  
+              </div> 
+            </div>
+          </div>
+          <div class="col-md-3"><jdoc:include type="modules" name="sidebar" style="xhtml" /></div>
+        <?php else: ?> 
           <!-- Wenn SIDEBAR nicht vorhanden -> ganze Breite 12 columns für Content wie z.B. Forum -->
             <div class="col-md-12">
               <div class="kp-content">
-                <jdoc:include type="message" />
+                <?php if (!empty($app->getMessageQueue)) : ?>
+                  <jdoc:include type="message" />
+                <?php endif ?>
                 <div class="margin-content"> <jdoc:include type="component" /> </div> 
               </div> 
             </div>
+        <?php endif; ?> 
         </div>
       </div>
-
 
     </div>  
   </div>
