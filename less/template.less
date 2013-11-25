@@ -75,7 +75,6 @@
   -o-border-radius: 0 0 @radius @radius;
   border-radius: 0 0 @radius @radius;
 }
-
 .transparent-whitesmoke {
    /* Fallback for web browsers that doesn't support RGBa background-color:#f5f5f5;*/
   background: rgb(245, 245, 245);
@@ -86,7 +85,11 @@
   /* For IE 8*/
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCf5f5f5, endColorstr=#CCf5f5f5)";
 }
-
+.dropdown-background {
+  background:@whitesmoke;
+  background: -moz-linear-gradient(top, #EEEEEE, #BBBBBB);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EEEEEE), to(#BBBBBB));
+}
 /**************************************************************************************************************************************
 ***************************************************************************************************************************************
                     FONTS
@@ -445,7 +448,7 @@ div#bgoverall div#mainmenu_mr.maximenuckh div.maxiroundedcenter ul.menu li.maxim
     width: 286px;
     margin: -25px 0 0 -150px !important;
 }
-div#mr-logo {
+/*div#mr-logo {
   height: 0px;
 }
 div#mr-logo a.rangers_logo img {
@@ -454,25 +457,39 @@ div#mr-logo a.rangers_logo img {
   top: -71px;
   left: -140px;
   z-index: 5;
-}
+}*/
 /**************************************************************************************************************************************
               NAVBAR Maximneu CK
 ***************************************************************************************************************************************/
+div#bgoverall div#mainmenu_mr .nav > li > a {
+  padding: 0px;
+}
 div#bgoverall div#mainmenu_mr ul.maximenuck:after{ 
   display: none;
-}  
+} 
   /* Menü Hintergrund + Abstand */
 div#bgoverall div#mainmenu_mr ul.maximenuck {
   border: 0px;
   margin: 0 auto 10px;
+  height: auto;
+  padding:0px 20px;
   .rounded-corners;
   .transparent-whitesmoke;
 }
   /* NAVBAR Maximneu CK Menü Level1 Hintergrund + Abstand */
 div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck.level1 {
-  border: 0px solid @anthrazit;
-  margin-top: 4px;    
+  border-top: 3px solid transparent;
+  margin-top: -3px;    
   margin-right: 12px;
+  vertical-align: middle;
+  box-shadow: none;
+}
+div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck.level1:hover {
+  border-top: 3px solid @orange;
+  .transparent-whitesmoke;
+}
+div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck.level1.active {
+  .transparent-whitesmoke;
 }
   /* MenüNAVBAR Maximneu CK Level1 Farbe, Größe + Abstand */
 div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck.level1 > a  {
@@ -480,18 +497,41 @@ div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck.level1 > a  {
   font: 24px/22px 'alternate_gothic_3Rg', sans-serif; 
   min-height: 30px;
   text-shadow: 1px 1px 1px @white;
+  box-shadow: none;
+  padding: 10px 10px;
 }
 div#bgoverall div#mainmenu_mr ul.maximenuck li.level1.parent > a, 
 div#mainmenu_mr ul.maximenuck li.level1.parent > span.separator {
-  padding-right: 18px;
-  }
+  padding: 10px 15px 10px 10px;
+  margin-right: 5px;
+  background: url(../images/chevron_down.png); 
+  background-repeat: no-repeat; 
+  background-size: 10px 10px;
+  background-position: right center; 
+}
   /* Dropdown Hintergrund */  
 div#bgoverall div#mainmenu_mr ul.maximenuck li div.floatck {
-  border: medium none;
+/*  width : 180px;  default width */
+  margin: 0;
+  padding:10px 10px 5px;
+  border: medium none; 
+  .dropdown-background;
+  filter: none;
   .rounded-corners-bottom;
 }
+/* Sublevel items - level 2 to n */
+div#bgoverall div#mainmenu_mr ul.maximenuck li ul.maximenuck2 li.maximenuck,
+div#bgoverall div#mainmenu_mr ul.maximenuck2 li.maximenuck {
+  .schrift-lg;
+  text-shadow: 1px 1px 1px #ffffff;
+  padding: 5px 0px;
+  margin: 0px 0px 4px 0px;
+  text-align:left;
+  background : none;
+}
 div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck ul.maximenuck2 li a {
-  color:inherit;  }
+  color:inherit; 
+}
   /* Schriftfarbe + Größe + Mouseover */
 div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck ul.maximenuck2 li:hover > a,
 div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck ul.maximenuck2 li:hover > h2 a,
@@ -501,25 +541,27 @@ div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck ul.maximenuck2 li.acti
   text-decoration: none;
   background: transparent !important;
 }          
-/* Separators */
-div#bgoverall div#mainmenu_mr.maximenuckh ul.maximenuck2 li.maximenuck div.mr-header {
-  border-bottom: 1px solid @grau;
-  margin: 0 ;
-  padding-bottom: 5px;
-}
-div#bgoverall div#mainmenu_mr.maximenuckh ul.maximenuck2 li.maximenuck div span.separator span.titreck {
+div#bgoverall div#mainmenu_mr.maximenuckh ul.maximenuck2 li.maximenuck span.separator span.titreck {
   float: none !important;
   color: @grau;
   font: 24px/24px 'alternate_gothic_3Rg', sans-serif; 
   min-height: 17px;
   text-decoration: none;
 }
-div#bgoverall div#mainmenu_mr.maximenuckh ul.maximenuck2 li.maximenuck div span.separator span.descck {
+div#bgoverall div#mainmenu_mr.maximenuckh ul.maximenuck2 li.maximenuck span.separator span.descck {
   float: none !important;
   color: @grau;
   font: 14px/14px 'alternate_gothic_3Rg', sans-serif; 
   min-height: 17px;
   text-decoration: none;
+}
+
+div#bgoverall div#mainmenu_mr.maximenuckh ul.maximenuck2 li.maximenuck span.separator
+/* Separators 
+div#bgoverall div#mainmenu_mr.maximenuckh ul.maximenuck2 li.maximenuck div.mr-header */{
+  border-bottom: 1px solid @grau;
+  margin: 0 20px 0 0;
+  padding-bottom: 5px;
 }
 div#bgoverall div#mainmenu_mr ul.maximenuck li ul.maximenuck2 li.blackbox,
 div#bgoverall div#mainmenu_mr ul.maximenuck li ul.maximenuck2 li.greybox  {
