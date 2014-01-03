@@ -22,6 +22,7 @@
 @anthrazit: #1b1b1b;
 @grau: #808080;
 @taupe-grau: #8B8589;
+@mittelgrau: #a9a9a9;
 @lightgray: #DDDDDD;
 @shadow: #C7C7C7;
 
@@ -264,7 +265,7 @@ input[type="color"]:focus,
     Teams Grafik
 ***************************************************************************************************************************************/
 div#bgheader .teams {
-  background: url(../images/header_sprite_teams_2013-6.png) no-repeat scroll 0 0 transparent;
+  background: url(../images/header_sprite_teams_2014-2-1.png) no-repeat scroll 0 0 transparent;
   height: 36px;
 /*  left: 0px;
   position: relative;
@@ -273,30 +274,34 @@ div#bgheader .teams {
   .abstand-unten;
 }
 div#bgheader .teams:hover {
-  background: url(../images/header_sprite_teams_2013-6.png) no-repeat scroll 0 -36px transparent; 
+  background: url(../images/header_sprite_teams_2014-2-1.png) no-repeat scroll 0 -36px transparent; 
 }
 div#bgheader .teams a.AFVBY {
-  left: 10px;
+  left: 1px;
   width: 70px;
 }
 div#bgheader .teams a.FEL {
-  left: 110px;
+  left: 101px;
   width: 38px;
 }
 div#bgheader .teams a.FFB {
-  left: 162px;
+  left: 159px;
   width: 42px;
 }
 div#bgheader .teams a.ING {
-  left: 219px;
+  left: 221px;
   width: 21px;
 }
-div#bgheader .teams a.REG {
-  left: 255px;
-  width: 28px;
+div#bgheader .teams a.LAN {
+  left: 262px;
+  width: 50px;
+}
+div#bgheader .teams a.STA {
+  left: 332px;
+  width: 54px;
 }
 div#bgheader .teams a.STR {
-  left: 298px;
+  left: 406px;
   width: 44px;
 }
 div#bgheader .teams a {
@@ -361,7 +366,7 @@ div#ticker div#gkHighlighterGK5-0.gkHighlighterGK5 div.gkHighlighterInterface {
   .transparent-whitesmoke;
 }
 .margin-content{
-  margin: 0 15px 20px;
+  margin: 0 30px 20px;
   padding: 10px 0;
 }
 .margin-correct { 
@@ -568,13 +573,12 @@ div#bgoverall div#mainmenu_mr ul.maximenuck li ul.maximenuck2 li.greybox  {
   text-align: center;
   line-height: 28px;
 }
-
-
-/* Slideshow 
-*********************************************/
+/**************************************************************************************************************************************
+     Slideshow 
+***************************************************************************************************************************************/
 div#bgoverall div.slideshowck-kpslideshow div.camera_pag ul.camera_pag_ul li img.camera_thumb{
-  top: 24px !important;} 
-
+  top: 24px !important;
+} 
 /**************************************************************************************************************************************
     Latest News
 ***************************************************************************************************************************************/
@@ -611,7 +615,9 @@ div#bgoverall div.slideshowck-kpslideshow div.camera_pag ul.camera_pag_ul li img
 .sponsor2 {
   text-align: center;
 }
+/* not used */
 .logout {
+  .abstand-unten;
   padding: 5px;
   text-align: center;
 }  
@@ -773,7 +779,7 @@ div.moduletable-gamecenter .carousel{
   margin-bottom: 0px;
 }
 /**************************************************************************************************************************************
-                Ergebnistabellen
+                Ergebnistabellen Front Page
 ***************************************************************************************************************************************/
 .nav-tabs {
   border-bottom: 1px solid @grau;
@@ -805,6 +811,183 @@ div.moduletable-gamecenter .carousel{
 }
 #bgoverall div#overall div.moduletable table.table{
   margin-bottom: 8px;
+}
+
+/**************************************************************************************************************************************
+                    ROSTER
+***************************************************************************************************************************************/
+.roster-header {
+  font: 30px/40px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px @white;
+  text-transform: uppercase;
+}
+.roster-pos {
+  font: 96px/96px 'alternate_gothic_1Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px @white;
+  color: @mittelgrau;
+  text-align: right;
+  margin-bottom: 90px;
+}
+.roster-name {
+  font: 48px/48px 'alternate_gothic_1Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px @white;
+}
+.roster-vorname{
+  font: 32px/18px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px @white;
+}
+.roster-text{
+  font: 24px/24px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px @white;
+  color: @grau;
+}
+.award-text{
+  font: small-caps 28px/28px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; 
+  text-shadow: -1px 1px 1px white;}
+img.roster-flag {
+  max-width: 50px;
+  width: auto;
+  margin-left: -3px;
+}
+img.roster-pic {
+  max-width: 110px;
+  width: auto;
+}
+.panel {
+  background-color: transparent;
+}
+.panel-heading {
+  padding-top: 5px;
+  padding-bottom: 3px;
+}
+.panel-default > .panel-heading {
+  background-color: transparent;
+/*  
+  .transparent-whitesmoke;
+*/
+}
+.panel-title {
+  color: @orange;
+}
+.panel-default {
+  border: 2px solid @grau;
+}
+.panel-group .panel-heading + .panel-collapse .panel-body {
+  border-top: 1px transparent none;
+}
+
+/**************************************************************************************************************************************
+    ARTICLE
+***************************************************************************************************************************************/
+/*** Beitrag ***/
+.item-page { 
+  min-height:400px; 
+  padding-bottom: 1px;
+}
+.item-page time {
+  display:block;
+  width:82px;
+  height:82px;
+  line-height:52px;
+  margin: 8px 0 0 -35px ;
+  padding:6px;
+  text-align:center;
+  background:@orange;
+  font-size:48px;
+  font-weight:700;
+  color:@whitesmoke;
+  .rounded-corners;
+}
+.item-page time span {
+  display:block;
+  font-size:20px;
+  letter-spacing: 3px;
+  line-height:40%;
+}
+.item-page aside {
+  float: left;
+  margin: 0 0 0 -10px;
+  position: absolute;
+  width: 115px;
+}
+div.item-page aside div.btn-group {
+  .transparent-whitesmoke;
+  .rounded-corners;
+}
+/* Beitragsinfo */
+dl.article-info {
+  .schrift-sm;
+  margin-bottom: 0;
+  text-align: right;
+}
+dl.article-info dd, dl.article-info dt  {
+  line-height: 20px !important;
+}
+.kp-article {
+  margin: -10px 5px 56px 135px;
+}
+.kp-article-static{
+  margin: -10px 0px 30px;
+}
+.kp-article .label-info, .kp-article-static .label-info{
+  background-color: @grau;
+}
+.kp-article .label-info[href]:hover, .kp-article .label-info[href]:focus, 
+.kp-article-static .label-info[href]:hover, .kp-article-static .label-info[href]:focus, {
+  background-color: @orange;
+}
+.kp-article .label, .kp-article-static .label {
+  font-size: 100%;
+  font-weight: normal;
+}
+#bgoverall #overall div.kp-content div.margin-content div.tag-category form#adminForm.form-inline fieldset.filters div.btn-group input#filter-search.inputbox,
+#bgoverall #overall div.kp-content div.margin-content div.gallery div.jg_search form input.inputbox,
+#bgoverall #overall div.kp-content div.margin-content div.search form#searchForm div.btn-toolbar div.btn-group input#search-searchword.inputbox,
+ {
+  display: inline-block;
+  padding: 6px 12px;
+  line-height: 1.428571429;
+  border: 1px solid transparent;
+  .rounded-corners;
+}
+#bgoverall #overall div.kp-content div.margin-content div.gallery div.jg_search form input.inputbox {  
+  padding: 6px 25px;
+}
+/* TAGLIST */
+.list-striped {
+  border: 1px solid @whitesmoke;
+  .rounded-corners;
+  list-style-type: none;
+  margin: 20px 0;
+  padding: 3px;
+}
+.list-striped li { 
+  padding:7px 15px; 
+  .rounded-corners;
+}
+.list-striped li:nth-child(odd) { 
+  .transparent-whitesmoke; 
+}
+.list-striped li:hover { 
+  background-color: @whitesmoke; 
+}
+/**************************************************************************************************************************************
+    DOWNLOADS
+***************************************************************************************************************************************/
+#bgoverall #overall div.kp-content div.margin-content table.jd_top_navi tbody tr td form#go_cat select#cat_list.inputbox {
+  .rounded-corners;
+  padding: 5px;
+}
+#bgoverall #overall div.kp-content div.margin-content table.jd_cat_subheader {
+  .rounded-corners;
+  background-color: transparent; 
+  border-bottom: none;
+  padding: 10px !important;
+}
+.cat_header {
+  .rounded-corners;
+  .transparent-whitesmoke; 
+  padding:6px;
+
+}
+.jd_footer .footer {
+  .rounded-corners;
+  .transparent-whitesmoke; 
 }
 
 

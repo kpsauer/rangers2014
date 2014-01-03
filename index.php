@@ -81,7 +81,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
           </div>
           <div class="row">
             <?php if($this->countModules('teamlinks')) :?>
-              <div class="teams col-md-8 col-md-offset-4 ">
+              <div class="teams col-md-11 col-md-offset-1 col-lg-9 col-lg-offset-3 ">
                 <jdoc:include type="modules" name="teamlinks" />
               </div>
             <?php endif; ?> 
@@ -133,24 +133,6 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
       <?php endif; ?> 
 
     <!-- ***** MAIN SPONSORS & LOGOUT ***** -->
-      <!-- Prüfen ob LOGOUT vorhanden -->
-      <?php if($this->countModules('logout')) :?>
-      <!-- Wenn LOGOUT vorhanden -> geteilter Inhalt 10:2 -->
-        <?php if($this->countModules('sponsor1')) :?>
-        <div class="container">
-          <div class="row"> 
-            <div class="col-md-10"> 
-              <div class="sponsor1 kp-content"> <jdoc:include type="modules" name="sponsor1" /> </div>
-            </div>
-            <div class="col-md-2"> 
-              <div class="logout kp-content"> <jdoc:include type="modules" name="logout" /> </div>
-            </div>
-          </div>
-        </div>
-        <?php endif; ?> 
-
-      <?php else: ?> 
-      <!-- Wenn LOGOUT nicht vorhanden -> ganze Breite 12 columns für Content wie z.B. Forum -->
         <?php if($this->countModules('sponsor1')) :?>
         <div class="container">
           <div class="row"> 
@@ -160,7 +142,6 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
           </div>
         </div>
         <?php endif; ?> 
-      <?php endif; ?> 
 
 
     <!-- ***** MAIN CONTENT ***** -->
@@ -302,7 +283,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
           <div class="col-md-12">
             <?php echo JText::_('Footballclub M&uuml;nchen 1981 M&uuml;nchen Rangers e.V. &minus; American Football in M&uuml;nchen.<br /> 
             &copy; 2009-'.date('Y ').' by KP &minus; Alle Rechte vorbehalten.')?> 
-            <a><img class="footer-logo" src="templates/rangers2013/images/rangers_stern_286.png" width="1" height="1" alt=""> </a>
+            <a><img class="footer-logo" src="templates/rangers2014/images/rangers_stern_286.png" width="1" height="1" alt=""> </a>
           </div>
         </div>  
       </div>
