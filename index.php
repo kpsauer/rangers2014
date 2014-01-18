@@ -229,19 +229,14 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
         <?php endif; ?> 
         </div>
       </div>
-
-    </div>  
-  </div>
 <!-- ****************************************************
 *   B O T T O M                                         *
 * Module:   sponsor2-1, sponsor2-2, sponsor2-3,         *
 *           sponsor2-4, sponsor2-5, sponsor2-6          *
 *           sitemap1, sitemap2, sitemap3, sitemap4,     *
 *           sitemap5, facebook, expedia                 *
-* Other:    Copyright                                   *
 *****************************************************/-->
-  <div id="bgfooter">
-  <!-- ***** FACEBOOK & EXPEDIA ***** -->
+<!-- ***** FACEBOOK & EXPEDIA ***** -->
     <?php if($this->countModules('facebook or expedia')) :?>
     <div class="container hidden-xs">
       <div class="row">
@@ -276,6 +271,17 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
       </div>
     </div>
     <?php endif; ?> 
+  
+
+    </div>  
+  </div>
+
+<!-- ****************************************************
+*   F O O T E R                                         *
+*                                                       *
+* Other:    Copyright                                   *
+*****************************************************/-->
+  <div id="bgfooter">
   <!-- ***** COPYRIGHT ***** -->
     <div class="container">
       <div class="row">

@@ -28,7 +28,7 @@
 
 // MIXINS
 .textshadow-white {
-  text-shadow: -1px 1px 1px white;
+  text-shadow: -1px 1px 1px @white;
 }
 .abstand-unten {
   margin-bottom: 15px;
@@ -629,6 +629,99 @@ img.sponsor-detail {
   width:auto; 
 } 
 /**************************************************************************************************************************************
+                            SPIELPLAN
+***************************************************************************************************************************************/
+.spielplan-gesamt { 
+  margin-top: 15px;
+}
+.spielplan {
+  height: 44px;
+  width: 788px;
+  margin: 10px 0;
+  padding: 2px 0;
+  border: 1px solid @whitesmoke;
+  .rounded-corners;
+}
+.aktuell,
+.spielplan:hover {
+  .transparent-whitesmoke;
+}
+.spielplan .spielplan-team a,
+.spielplan .spielplan-time a, 
+.spielplan .spielplan-date a,
+.spielplan .spielplan-day a {
+  float: left;
+  font: normal normal 26px/40px 'alternate_gothic_3Rg', sans-serif;
+  color: @anthrazit;
+  text-transform: uppercase;
+}
+.spielplan .spielplan-date a {
+  padding-left: 10px;
+  width: 75px;
+}
+.spielplan .spielplan-day a {
+  width: 35px;
+  text-align: center;
+}
+.spielplan .spielplan-time a {
+  float: right;
+  width: 70px;
+  padding-right: 10px;  
+  text-align: center;
+}
+.spielplan .spielplan-team .home-name a, 
+.spielplan .spielplan-team .away-name a {
+  float: left;
+  width: 200px;
+  padding: 0 10px;
+} 
+.spielplan .spielplan-team .home-name.rangers a, 
+.spielplan .spielplan-team .away-name.rangers a {
+  color:@orange;
+}
+.spielplan .spielplan-team .home-name a {
+  text-align: right;
+}
+.spielplan .spielplan-team .away-name a {
+  text-align: left;
+}
+.spielplan .spielplan-team.home img, 
+.spielplan .spielplan-team.away img {
+  max-width: 45px;
+  width: auto;
+  vertical-align: top;
+  margin: 4px 0 0 0;
+  .rounded-corners;
+}
+.spielplan .spielplan-team.away img {
+  float: left;
+}
+.spielplan .spielplan-vs a {
+  float: left;
+  min-width: 20px;
+  font: 14px/40px 'alternate_gothic_3Rg', sans-serif;
+  color: @grau;
+  text-align: center;
+  text-transform: uppercase;
+}
+.spielplan .spielplan-team .home-score a,
+.spielplan .spielplan-team .away-score a {
+  text-align: center;
+  color: @anthrazit;
+  display: block;
+  height: 40px;
+  width: 48px;
+  margin: 0px 0 0 0;
+  vertical-align: middle;
+}
+.spielplan .spielplan-team .home-name.lost a ,
+.spielplan .spielplan-team .away-name.lost a,
+.spielplan .spielplan-team .home-score.lost a, 
+.spielplan .spielplan-team .away-score.lost a {
+  color: @grau;
+}
+
+/**************************************************************************************************************************************
                             GAMECENTER
 ***************************************************************************************************************************************/
 .moduletable-gamecenter {
@@ -670,7 +763,7 @@ img.sponsor-detail {
     GAMECENTER - SCOREBOARD
 ***************************************************************************************************************************************/
 .game-center-scoreboard {
-  text-shadow: -1px 1px 1px white;
+  .textshadow-white;
   height: 105px;
   width: 490px;
   margin: 0 0 10px 34px;
@@ -753,15 +846,15 @@ img.sponsor-detail {
   top: 38px;
   }
 .carousel-control.right, 
-.carousel-control.left{
+.carousel-control.left {
   background-image: none;
   background-repeat: no-repeat;
 }
-.carousel-control.right{
+.carousel-control.right {
   left:auto;
   right: -3px;
 }
-.carousel-control.left{
+.carousel-control.left {
   left:0px;
   right:auto;
 }
@@ -816,29 +909,37 @@ div.moduletable-gamecenter .carousel{
 /**************************************************************************************************************************************
                     ROSTER
 ***************************************************************************************************************************************/
+.roster-header, 
+.roster-pos,
+.roster-name,
+.roster-vorname,
+.roster-text, 
+.award-text {
+  letter-spacing: 0; 
+  .textshadow-white;
+}
 .roster-header {
-  font: 30px/40px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px @white;
+  font: 30px/40px 'alternate_gothic_3Rg', Arial, sans-serif; 
   text-transform: uppercase;
 }
 .roster-pos {
-  font: 96px/96px 'alternate_gothic_1Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px @white;
+  font: 96px/96px 'alternate_gothic_1Rg', Arial, sans-serif; 
   color: @mittelgrau;
   text-align: right;
   margin-bottom: 90px;
 }
 .roster-name {
-  font: 48px/48px 'alternate_gothic_1Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px @white;
+  font: 48px/48px 'alternate_gothic_1Rg', Arial, sans-serif; 
 }
-.roster-vorname{
-  font: 32px/18px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px @white;
+.roster-vorname {
+  font: 32px/18px 'alternate_gothic_2Rg', Arial, sans-serif; 
 }
-.roster-text{
-  font: 24px/24px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: -1px 1px 1px @white;
+.roster-text, 
+.award-text {
+  font: 26px/26px 'alternate_gothic_3Rg', Arial, sans-serif; 
+  font-variant: small-caps; 
   color: @grau;
 }
-.award-text{
-  font: small-caps 28px/28px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; 
-  text-shadow: -1px 1px 1px white;}
 img.roster-flag {
   max-width: 50px;
   width: auto;
@@ -848,18 +949,16 @@ img.roster-pic {
   max-width: 110px;
   width: auto;
 }
-.panel {
+/* .panel {
   background-color: transparent;
-}
+} */
 .panel-heading {
   padding-top: 5px;
   padding-bottom: 3px;
 }
+.panel,
 .panel-default > .panel-heading {
   background-color: transparent;
-/*  
-  .transparent-whitesmoke;
-*/
 }
 .panel-title {
   color: @orange;
