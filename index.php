@@ -53,13 +53,13 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
               <?php if($this->countModules('ticker')) :?>
                 <div class="mr-schriftzug-ticker">
                   <a href="index.php">
-                    <img src="templates/rangers2014/images/mr-schrift75.png" class="mr-muenchen" alt="München Rangers Schriftzug"> 
+                    <img src="templates/rangers2014/images/mr-schrift.png" class="mr-muenchen" alt="München Rangers Schriftzug"> 
                   </a>
                 </div>
               <?php else: ?> 
                 <div class="mr-schriftzug">
                   <a href="index.php">
-                    <img src="templates/rangers2014/images/mr-schrift75.png" class="mr-muenchen" alt="München Rangers Schriftzug"> 
+                    <img src="templates/rangers2014/images/mr-schrift.png" class="mr-muenchen" alt="München Rangers Schriftzug"> 
                   </a>
                 </div>
               <?php endif; ?> 
