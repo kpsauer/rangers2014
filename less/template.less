@@ -193,7 +193,7 @@ a:hover, a:focus {
 #bgheader .navbar .nav > li > a {
   border-top: 3px solid transparent;
   float: none;
-  padding: 8px 14px;
+  padding: 8px 13px;
 /*  padding-bottom: 8px;  */
   .schrift-md;
   font-weight: bold;
@@ -335,7 +335,9 @@ div#bgheader .teams a {
   .schrift-lg; 
 }
 #ticker .gkHighlighterWrapperSub {
+  position: relative;
   min-height: 24px;
+  opacity: 1!important;
 }
 #ticker .gkHighlighterItem{
   color: @anthrazit;
@@ -459,7 +461,8 @@ div.login form.form-horizontal fieldset.well div.control-group div.controls inpu
                 LOGO -> NavBar
 ***********************************************************************************************************************************/
 /* NAVBAR Menü Maximneu CK Logo Level1 */
-div#bgoverall div#mainmenu_mr.maximenuckh div.maxiroundedcenter ul.menu li.maximenucklogo a img{
+div#bgoverall div#mainmenu_mr.maximenuckh div.maxiroundedcenter ul.maximenuck li.maximenucklogo a img, 
+div#bgoverall div#mainmenu_mr.maximenuckh div.maxiroundedcenter ul.menu li.maximenucklogo a img {
     width: 286px;
     margin: -25px 0 0 -150px !important;
 }
@@ -589,6 +592,18 @@ div#bgoverall div#mainmenu_mr ul.maximenuck li ul.maximenuck2 li.greybox  {
 div#bgoverall div.slideshowck-kpslideshow div.camera_pag ul.camera_pag_ul li img.camera_thumb{
   top: 24px !important;
 } 
+.camera_caption_title {
+  font: 40px/48px 'alternate_gothic_2Rg',Arial,sans-serif;
+  letter-spacing: 0;
+  color: @orange;
+}
+div.camera_caption_desc {
+  .schrift-lg;
+  color: @whitesmoke;
+}
+.camera_bar_cont span {
+  background-color: @orange !important;
+}
 /***********************************************************************************************************************************
     Latest News
 ***********************************************************************************************************************************/
@@ -758,6 +773,9 @@ a.table-img img {
 .tip-text {
   font-size: 100%;
   margin: 0;
+}
+.hasTip{
+  color: @orange;
 }
 /***********************************************************************************************************************************
                             SPIELPLAN
@@ -1149,6 +1167,9 @@ img.roster-pic {
 div.item-page aside div.btn-group {
   .transparent-whitesmoke;
   .rounded-corners;
+}
+.item-page .btn-group{
+    display:block!important;
 }
 /* Beitragsinfo */
 dl.article-info {

@@ -16,33 +16,11 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
 
 <head>
   <jdoc:include type="head" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <link rel="apple-touch-icon-precomposed" href="<?php echo $tpath; ?>/images/apple-touch-icon-57x57-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $tpath; ?>/images/apple-touch-icon-72x72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $tpath; ?>/images/apple-touch-icon-114x114-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $tpath; ?>/images/apple-touch-icon-144x144-precomposed.png">
-  <link rel="stylesheet" href="templates/rangers2014/css/tooltip.css">
-  <script src="templates/rangers2014/js/jquery-ui-1.10.4.custom.js"></script>
-  <script>
-   jQuery(document).ready(function() {
-    jQuery( '.rs_calendar_module' ).tooltip();  
-    });
-
-  </script>
-  <script type="text/javascript" src="<?php echo $tpath.'/js/easing.js'; ?>"></script>
-  <script type="text/javascript" src="<?php echo $tpath.'/js/jquery.ui.totop.js'; ?>" ></script>
-  <script type="text/javascript">
-    jQuery(document).ready(function() {
-          jQuery('#lbClose, #lbOverlay').live('click',function(){
-              jQuery('#lbOverlay').height(0);
-          }); 
-    });
-    jQuery(document).ready(function() {
-      jQuery().UItoTop({ easingType: 'easeOutQuart' });
-    });
-    
-  </script>
   <!--[if lte IE 8]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <?php if ($pie==1) : ?>
@@ -53,6 +31,10 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
     <?php endif; ?>
   <![endif]-->
 </head>
+
+
+
+  
 <body class="<?php echo (($menu->getActive() == $menu->getDefault()) ? ('front') : ('page')).' '.$active->alias.' '.$pageclass; ?>">
   <a name="toTop" id="toTop" ></a>
 <!-- ************************************************
@@ -187,13 +169,13 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
                   <jdoc:include type="modules" name="gamecenter" style="xhtml" />
                   <!-- ***** Bootstrap CAROUSEL ***** -->
 
-<!--                  <script type="text/javascript"> 
-                    jQuery(document).ready(function() {
-                      jQuery('.carousel').each(function(){
-                      jQuery(this).carousel({
+                  <script type="text/javascript"> 
+                    $(document).ready(function() {
+                      $('.carousel').each(function(){
+                      $(this).carousel({
                           interval: 600000
                       });
-                      jQuery('.carousel').carousel('pause');
+                      $('.carousel').carousel('pause');
                       });
                     });
                     if (typeof jQuery != 'undefined' && typeof MooTools != 'undefined' ) {
@@ -203,7 +185,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
                             }
                         });
                     }
-                  </script>-->
+                  </script>
                 </div>
                 <?php endif; ?>  
 
@@ -324,7 +306,24 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
       <jdoc:include type="modules" name="social"/>      
     </div>
   <?php endif; ?> 
-
+<!-- ***** Scroll To-Top Floating Button ***** -->
+  <!-- jquery --> 
+  <script type="text/javascript" src="<?php echo $tpath.'/js/jquery-1.10.2.min.js'; ?>"></script>
+  <!-- easing plugin ( optional ) -->
+  <script type="text/javascript" src="<?php echo $tpath.'/js/easing.js'; ?>"></script>
+  <!-- UItoTop plugin -->
+  <script type="text/javascript" src="<?php echo $tpath.'/js/jquery.ui.totop.js'; ?>" ></script>
+  <!-- Starting the plugin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      /*  var defaults = {
+          containerID: 'toTop', // fading element id
+        containerHoverID: 'toTopHover', // fading element hover id
+        scrollSpeed: 1200,
+        easingType: 'linear' }; */
+      $().UItoTop({ easingType: 'easeOutQuart' });
+    });
+  </script>
   
   <jdoc:include type="modules" name="debug" />
 </body>
@@ -353,6 +352,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
 <!-- ********************************************
 *   BOOTSTRAP MENU CODE               *
 *************************************************/-->
+
 
 </html>
 
