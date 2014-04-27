@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------------
 # author  Klaus-Peter Sauer
-# version   1.0.0 November 9, 2013
+# version   1.5.0 April 27, 2014
 # package München Rangers Joomla Template 2014
 # copyright Copyright © 2013 by Klaus-Peter Sauer - All rights reserved.
 # @license  http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
@@ -30,8 +30,14 @@
 .textshadow-white {
   text-shadow: -1px 1px 1px @white;
 }
-.abstand-unten {
+.abstand-unten-lg {
   margin-bottom: 15px;
+}
+.abstand-unten-md {
+  margin-bottom: 10px;
+}
+.abstand-unten-sm {
+  margin-bottom: 8px;
 }
 .schrift-lg {
   font-size: 14px;
@@ -135,12 +141,12 @@
     font-style: normal; 
 }
 .componentheading, 
-h1 {font: 46px/54px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; .textshadow-white;}
-h2 {font: 38px/46px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; }
+h1 {font: 42px/50px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; .textshadow-white;}
+h2 {font: 36px/44px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; }
 h3 {font: 32px/38px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; .textshadow-white;}
-h4 {font: 28px/34px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
-h5 {font: 22px/30px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
-h6 {font: 16px/24px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+h4 {font: 28px/32px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+h5 {font: 22px/28px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+h6 {font: 16px/20px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
 /***********************************************************************************************************************************
   FRONTEND LESS
 ***********************************************************************************************************************************/
@@ -175,15 +181,23 @@ a:hover, a:focus {
 /*  margin: 10px 0 20px 7px; */
   margin: 10px 0 30px 7px;
 }
+.mr-schriftzug a img.mr-muenchen,
+.mr-schriftzug-ticker a img.mr-muenchen {
+  width:250px;
+}
 .mr-schriftzug-ticker{
 /*  margin: 15px 0 5px 7px; */
   margin: 14px 0 5px 7px;
+}
+/* Impressum Logo Size */
+.mr-logo-size {
+  max-width: 240px;
 }
 /***********************************************************************************************************************************
     HEADER Topmenu 
 ***********************************************************************************************************************************/
 #bgheader .container .row .navbar {
-  .abstand-unten;
+  .abstand-unten-md;
   padding-right: 0px;
   min-height: 36px;
 } 
@@ -193,9 +207,9 @@ a:hover, a:focus {
 #bgheader .navbar .nav > li > a {
   border-top: 3px solid transparent;
   float: none;
-  padding: 8px 13px;
+  padding: 6px 6px;
 /*  padding-bottom: 8px;  */
-  .schrift-md;
+  .schrift-sm;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
@@ -218,20 +232,16 @@ a:hover, a:focus {
     HEADER SEARCH
 ***********************************************************************************************************************************/
 .mr-search {
-  .abstand-unten;  
+  .abstand-unten-md;  
   right: 0;
-/*  padding-right: 0px;
-  padding-left: 0px; */
 }
 /* SUCHE Eingabefeld */ 
 #bgheader  select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
   display: inline-block;
-/*  height: 14px; 
-  margin-bottom: 5px;*/
   border: medium none;
-  padding: 6px 6px;
-  .schrift-lg;
-  line-height: 14px;
+  padding: 5px 5px;
+  .schrift-sm;
+  line-height: 13px;
   .rounded-corners-left;
 }
 textarea:focus,
@@ -256,7 +266,7 @@ input[type="color"]:focus,
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 102, 0, 0.6);
 }
 #mod-search-searchword {
-  margin-top:8px;
+  margin-top:6px;
 }
 #bgheader div.mr-search .btn-primary {
   background-color: @grau; 
@@ -268,8 +278,9 @@ input[type="color"]:focus,
 }
 #bgheader div.mr-search .btn {
   .rounded-corners-right;
+  .schrift-sm;
   margin: 0 0 2px -4px;
-  padding: 3px 25px;
+  padding: 3px 17px;
 }
 /***********************************************************************************************************************************
     Teams Grafik
@@ -281,7 +292,7 @@ div#bgheader .teams {
   position: relative;
   top: 0px; */
   z-index: 1;
-  .abstand-unten;
+  .abstand-unten-md;
 }
 div#bgheader .teams:hover {
   background: url(../images/header_sprite_teams_2014-2-1.png) no-repeat scroll 0 -36px transparent; 
@@ -325,14 +336,14 @@ div#bgheader .teams a {
     TICKER
 ***********************************************************************************************************************************/
 #ticker {
- .abstand-unten;
+ .abstand-unten-md;
   min-height: 14px;
 }
 #ticker .gkHighlighterInterface {
-  padding: 3px 7px;
+  padding: 3px 6px;
 }
 #ticker .gkHighlighterInterface span.text { 
-  .schrift-lg; 
+  .schrift-md; 
 }
 #ticker .gkHighlighterWrapperSub {
   position: relative;
@@ -340,8 +351,9 @@ div#bgheader .teams a {
   opacity: 1!important;
 }
 #ticker .gkHighlighterItem{
+  .schrift-md; 
   color: @anthrazit;
-  padding: 2px 0;
+  padding: 3px 0;
   font-weight:bold;
 }
 #ticker .gkHighlighterGK5 {
@@ -350,9 +362,12 @@ div#bgheader .teams a {
   .rounded-corners;
   .transparent-whitesmoke;
 }
-div#ticker div#gkHighlighterGK5-0.gkHighlighterGK5 div.gkHighlighterInterface {
+#ticker div#gkHighlighterGK5-0.gkHighlighterGK5 div.gkHighlighterInterface {
   background-color: @orange;
   .rounded-corners-left;
+}
+#ticker div#gkHighlighterGK5-0.gkHighlighterGK5 div.gkHighlighterWrapper {
+  margin-left: 185px !important;
 }
 /***********************************************************************************************************************************
 ************************************************************************************************************************************
@@ -362,12 +377,12 @@ div#ticker div#gkHighlighterGK5-0.gkHighlighterGK5 div.gkHighlighterInterface {
 /* HINTERGRUNDBILD */ 
 #bgoverall {
   height:100%; 
-  min-height: 1100px; 
+  min-height: 950px; 
   margin:0 auto; 
   text-align:left; 
   width:100%;
   z-index: 0; 
-  background:url(../images/background/background.jpg) no-repeat top center @back-color;
+  background:url(../images/background/background-1583.jpg) no-repeat top center @back-color;
 }
 #bgoverall .page-header {
   border-bottom: none;
@@ -382,7 +397,7 @@ div#ticker div#gkHighlighterGK5-0.gkHighlighterGK5 div.gkHighlighterInterface {
   padding: 10px 0;
 }
 .margin-correct { 
-  .abstand-unten;
+  .abstand-unten-md;
 }
 /***********************************************************************************************************************************
     Login Form 
@@ -442,19 +457,26 @@ div.login form.form-horizontal fieldset.well div.control-group div.controls inpu
 /***********************************************************************************************************************************
     Moduletables 
 ***********************************************************************************************************************************/
-.moduletable {
+.moduletable,
+.moduletable-news {
   margin-top: 0px;
-  .abstand-unten;
+  .abstand-unten-md;
   padding: 1px 0;
   .rounded-corners;
   .transparent-whitesmoke;
 }
-.moduletable h3 {
+.moduletable h3,
+.moduletable-news h3,
+.moduletable-gamecenter h3 
+ {
   padding: 0 10px;
   margin: 5px 0;
+  font: 25px/32px 'alternate_gothic_3Rg', Arial, sans-serif; 
+  text-transform: uppercase;
   .rounded-corners;
 }
-.moduletable p {
+.moduletable p,
+.moduletable-news p {
   padding: 0 10px;
 }
 /***********************************************************************************************************************************
@@ -463,19 +485,9 @@ div.login form.form-horizontal fieldset.well div.control-group div.controls inpu
 /* NAVBAR Menü Maximneu CK Logo Level1 */
 div#bgoverall div#mainmenu_mr.maximenuckh div.maxiroundedcenter ul.maximenuck li.maximenucklogo a img, 
 div#bgoverall div#mainmenu_mr.maximenuckh div.maxiroundedcenter ul.menu li.maximenucklogo a img {
-    width: 286px;
+    width: 237px;
     margin: -25px 0 0 -150px !important;
 }
-/*div#mr-logo {
-  height: 0px;
-}
-div#mr-logo a.rangers_logo img {
-  overflow:visible; 
-  position:relative;
-  top: -71px;
-  left: -140px;
-  z-index: 5;
-}*/
 /***********************************************************************************************************************************
               NAVBAR Maximneu CK
 ***********************************************************************************************************************************/
@@ -512,16 +524,16 @@ div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck.level1.active {
   /* MenüNAVBAR Maximneu CK Level1 Farbe, Größe + Abstand */
 div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck.level1 > a  {
   color: @anthrazit ;
-  font: 25px/22px 'alternate_gothic_3Rg', sans-serif; 
-  min-height: 30px;
+  font: 23px/20px 'alternate_gothic_3Rg', sans-serif; 
+  min-height: px;
   text-shadow: 1px 1px 1px @white;
   box-shadow: none;
-  padding: 10px 10px;
+  padding: 8px 5px;
 }
 div#bgoverall div#mainmenu_mr ul.maximenuck li.level1.parent > a, 
 div#mainmenu_mr ul.maximenuck li.level1.parent > span.separator {
-  padding: 10px 15px 10px 10px;
-  margin-right: 5px;
+  padding: 10px 14px 10px 4px;
+  margin-right: 3px;
   background: url(../images/chevron_down.png); 
   background-repeat: no-repeat; 
   background-size: 10px 10px;
@@ -540,7 +552,7 @@ div#bgoverall div#mainmenu_mr ul.maximenuck li div.floatck {
 /* Sublevel items - level 2 to n */
 div#bgoverall div#mainmenu_mr ul.maximenuck li ul.maximenuck2 li.maximenuck,
 div#bgoverall div#mainmenu_mr ul.maximenuck2 li.maximenuck {
-  .schrift-lg;
+  .schrift-md;
   text-shadow: 1px 1px 1px #ffffff;
   padding: 5px 0px;
   margin: 0px 0px 4px 0px;
@@ -589,16 +601,23 @@ div#bgoverall div#mainmenu_mr ul.maximenuck li ul.maximenuck2 li.greybox  {
 /***********************************************************************************************************************************
      Slideshow 
 ***********************************************************************************************************************************/
+div#bgoverall div#camera_wrap_111.slideshowck-kpslideshow {
+  max-height: 329px;
+ .abstand-unten-md !important;
+}
 div#bgoverall div.slideshowck-kpslideshow div.camera_pag ul.camera_pag_ul li img.camera_thumb{
   top: 24px !important;
 } 
 .camera_caption_title {
-  font: 40px/48px 'alternate_gothic_2Rg',Arial,sans-serif;
+  font: 36px/44px 'alternate_gothic_2Rg',Arial,sans-serif;
   letter-spacing: 0;
   color: @orange;
 }
+.camera_caption_title a:hover {
+  color: @grau;
+}
 div.camera_caption_desc {
-  .schrift-lg;
+  .schrift-md;
   color: @whitesmoke;
 }
 .camera_bar_cont span {
@@ -607,30 +626,31 @@ div.camera_caption_desc {
 /***********************************************************************************************************************************
     Latest News
 ***********************************************************************************************************************************/
-.moduletable ul.latestnews,
-.moduletable ul.eventlistmod { 
+.moduletable-news {
+  height: 329px;
+  max-height: 329px;
+  overflow: hidden;
+}
+.moduletable-news ul.latestnews-news { 
   margin: 0 10px 10px;
   padding: 0;
   list-style: none outside none;
 }
-.moduletable ul.latestnews li,
-.moduletable ul.eventlistmod li  {
+.moduletable-news ul.latestnews-news li,
+.moduletable ul.rsepro_upcoming li  {
   border-bottom: 1px dotted @grau;
-  padding: 5px 0;
+  padding: 4px 0;
 } 
-.moduletable ul.latestnews li a,
-.moduletable ul.eventlistmod li span.location a {
+.moduletable-news ul.latestnews-news li a {
+  .schrift-md;
   line-height: 18px;
   font-weight: bold;
-}
-.moduletable ul.eventlistmod li span.date {
-  line-height: 18px;  
 }
 /***********************************************************************************************************************************
     SPONSOREN
 ***********************************************************************************************************************************/
 .sponsor1 {
-  .abstand-unten;
+  .abstand-unten-md;
   padding: 1px 5px;
   text-align: center;
 }
@@ -642,12 +662,16 @@ div.camera_caption_desc {
 }
 /* not used */
 .logout {
-  .abstand-unten;
+  .abstand-unten-md;
   padding: 5px;
   text-align: center;
 }  
 div#bgoverall div#overall div.container div.logout form#login-form {
   margin: 0 0 5px;
+}
+.sponsor1 p a img {
+  max-width: 125px;
+  max-height: 38px;
 }
 img.sponsor-detail {
   max-width: 200px;
@@ -671,11 +695,8 @@ a.table-img img {
 .moduletable ul.rsepro_upcoming {
   margin: 0 10px 10px;
 }
-.moduletable ul.rsepro_upcoming li {
-  border-bottom: 1px dotted @grau;
-  padding: 5px 0;
-}
 .moduletable ul.rsepro_upcoming li a {
+  .schrift-md;
   line-height: 18px;
 }
 .kp-content div input#from_direction {
@@ -692,7 +713,7 @@ a.table-img img {
 }
 #bgoverall div.kp-content .rs_input {
   height: 22px;
-  font-size: 12px;
+  .schrift-sm;
   padding-left: 5px;
   padding-right: 5px;
   .rounded-corners-left;
@@ -701,13 +722,13 @@ a.table-img img {
   padding: 0 5px;
 }
 #bgoverall .moduletable .rs_calendar_module table.rs_table {
-  font: 26px/32px 'alternate_gothic_3Rg', Arial, sans-serif; 
+  font: 24px/30px 'alternate_gothic_3Rg', Arial, sans-serif; 
   letter-spacing: 0; 
   .textshadow-white;
   text-transform: uppercase;
 }
 #bgoverall .moduletable .rs_calendar_module table.rs_calendar_module {
-  font-size: 14px;
+  .schrift-md;
   font-family: Arial, sans-serif;
   text-shadow: none;
 }
@@ -742,11 +763,9 @@ a.table-img img {
 #bgoverall .moduletable .rs_calendar_arrows_module {
   padding: 10px;
 }
-/**********************************************
-***********************************************
+/***********************************************************************************************************************************
                   Tooltips
-***********************************************
-***********************************************/
+***********************************************************************************************************************************/
 .tip-wrap { 
   z-index: 100000;
 }
@@ -785,7 +804,7 @@ a.table-img img {
 }
 .spielplan {
   height: 44px;
-  width: 788px;
+  width: 637px;
   margin: 10px 0;
   padding: 2px 0;
   border: 1px solid @whitesmoke;
@@ -796,7 +815,7 @@ a.table-img img {
   .transparent-whitesmoke;
 }
 .spielplan-subheader{
-  font: normal normal 26px 'alternate_gothic_3Rg', sans-serif;
+  font: normal normal 24px 'alternate_gothic_3Rg', sans-serif;
   margin-top: 20px;
   color: @grau;
   text-transform: uppercase;
@@ -806,28 +825,28 @@ a.table-img img {
 .spielplan .spielplan-date a,
 .spielplan .spielplan-day a {
   float: left;
-  font: normal normal 26px/40px 'alternate_gothic_3Rg', sans-serif;
+  font: normal normal 24px/40px 'alternate_gothic_3Rg', sans-serif;
   color: @anthrazit;
   text-transform: uppercase;
 }
 .spielplan .spielplan-date a {
   padding-left: 10px;
-  width: 75px;
+  width: 60px;
 }
 .spielplan .spielplan-day a {
-  width: 35px;
+  width: 27px;
   text-align: center;
 }
 .spielplan .spielplan-time a {
   float: right;
-  width: 70px;
+  width: 50px;
   padding-right: 10px;  
   text-align: center;
 }
 .spielplan .spielplan-team .home-name a, 
 .spielplan .spielplan-team .away-name a {
   float: left;
-  width: 200px;
+  width: 155px;
   padding: 0 10px;
 } 
 .spielplan .spielplan-team .home-name.rangers a, 
@@ -853,8 +872,8 @@ a.table-img img {
 }
 .spielplan .spielplan-vs a {
   float: left;
-  min-width: 20px;
-  font: 14px/40px 'alternate_gothic_3Rg', sans-serif;
+  min-width: 14px;
+  font: 13px/40px 'alternate_gothic_3Rg', sans-serif;
   color: @grau;
   text-align: center;
   text-transform: uppercase;
@@ -865,7 +884,7 @@ a.table-img img {
   color: @anthrazit;
   display: block;
   height: 40px;
-  width: 48px;
+  width: 42px;
   margin: 0px 0 0 0;
   vertical-align: middle;
 }
@@ -890,10 +909,6 @@ a.table-img img {
   background-color: none;
 /*  min-height: 130px; */
 }
-.moduletable-gamecenter h3 {
-  margin: 5px 0 0;
-  padding: 0 10px;
-}
 /***********************************************************************************************************************************
     GAMECENTER - HEADER
 ***********************************************************************************************************************************/
@@ -914,7 +929,7 @@ a.table-img img {
 }
 .game-center-header-date a,
 .game-center-header-desc a {
-  font: normal normal 20px/20px 'alternate_gothic_3Rg', sans-serif;
+  font: normal normal 19px/19px 'alternate_gothic_3Rg', sans-serif;
   color: @dunkelrot;
   text-transform: uppercase;
 }
@@ -923,9 +938,9 @@ a.table-img img {
 ***********************************************************************************************************************************/
 .game-center-scoreboard {
   .textshadow-white;
-  height: 105px;
-  width: 490px;
-  margin: 0 0 10px 34px;
+  height: 98px;
+  width: 396px;
+  margin: 0 0 0px 32px;
 }
 .game-center-away-team {
   float: right;
@@ -935,7 +950,7 @@ a.table-img img {
 }
 .game-center-away-team img, 
 .game-center-home-team img {
-  max-width: 120px;
+  max-width: 100px;
   width: auto;
 }
 .game-center-away-team img {
@@ -963,14 +978,14 @@ a.table-img img {
   .rounded-corners-right;
 }
 .game-center-scoreboard .score a {
-  font: 76px/82px 'alternate_gothic_3Rg', sans-serif;
+  font: 64px/67px 'alternate_gothic_3Rg', sans-serif;
   font-weight: bold;
   text-align: center;
   vertical-align: middle;  
   color: @anthrazit;
   display: block;
-  width: 100px;
-  height: 80px;
+  width: 80px;
+  height: 67px;
 }
 .game-center-scoreboard .score.lost a {
   color: @grau;
@@ -981,17 +996,17 @@ a.table-img img {
 }
 .game-center-time-left {
   float: left;
-  width: 50px;
-  height: 80px;
+  width: 36px;
+  height: 67px;
   font-family: 'alternate_gothic_3Rg',sans-serif;
 }
 .game-center-time-final a {
   display: block;
   text-align: center;
-  font-size: 36px;
-  line-height: 36px;
+  font-size: 28px;
+  line-height: 28px;
   color: @anthrazit;
-  margin: 25px 0 0 0;
+  margin: 20px 0 0 0;
   position: relative;
 }
 /***********************************************************************************************************************************
@@ -1002,8 +1017,8 @@ a.table-img img {
   color: @anthrazit;
   font-size: 48px;
   opacity: 0.5;
-  width: 40px; 
-  top: 25px;
+  width: 32px; 
+  top: 20px;
 }
 .carousel-control.right, 
 .carousel-control.left {
@@ -1039,8 +1054,8 @@ div.moduletable-gamecenter .carousel{
 }
 .nav-tabs > li > a,
 .nav-pills > li > a {
-  font: 17px/14px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; 
-  padding: 8px 6px;
+  font: 15px/12px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; 
+  padding: 6px 4px;
   margin-right: 1px;
   text-transform: uppercase;
 }
@@ -1049,13 +1064,13 @@ div.moduletable-gamecenter .carousel{
 }
 .nav-tabs > .active > a,
 .nav-tabs > .active > a:hover {
-  font: 17px/14px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; 
+  font: 15px/12px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; 
   border: 1px solid @grau;
   border-bottom-color: transparent;
   .transparent-whitesmoke;
 }
 .mr-tab {
-  .schrift-md;
+  .schrift-sm;
   .transparent-whitesmoke;
 }
 .moduletable div.custom div.tab-content {
@@ -1079,34 +1094,34 @@ div.moduletable-gamecenter .carousel{
   .textshadow-white;
 }
 .roster-header {
-  font: 30px/40px 'alternate_gothic_3Rg', Arial, sans-serif; 
+  font: 26px/34px 'alternate_gothic_3Rg', Arial, sans-serif; 
   text-transform: uppercase;
 }
 .roster-pos {
-  font: 96px/96px 'alternate_gothic_1Rg', Arial, sans-serif; 
+  font: 80px/82px 'alternate_gothic_1Rg', Arial, sans-serif; 
   color: @mittelgrau;
   text-align: right;
   margin-bottom: 90px;
 }
 .roster-name {
-  font: 48px/48px 'alternate_gothic_1Rg', Arial, sans-serif; 
+  font: 40px/40px 'alternate_gothic_1Rg', Arial, sans-serif; 
 }
 .roster-vorname {
-  font: 32px/18px 'alternate_gothic_2Rg', Arial, sans-serif; 
+  font: 28px/16px 'alternate_gothic_2Rg', Arial, sans-serif; 
 }
 .roster-text, 
 .award-text {
-  font: 26px/26px 'alternate_gothic_3Rg', Arial, sans-serif; 
+  font: 24px/24px 'alternate_gothic_3Rg', Arial, sans-serif; 
   font-variant: small-caps; 
   color: @grau;
 }
 img.roster-flag {
-  max-width: 50px;
+  max-width: 44px;
   width: auto;
   margin-left: -3px;
 }
 img.roster-pic {
-  max-width: 110px;
+  max-width: 100px;
   width: auto;
 }
 /* .panel {
@@ -1129,7 +1144,6 @@ img.roster-pic {
 .panel-group .panel-heading + .panel-collapse .panel-body {
   border-top: 1px transparent none;
 }
-
 /***********************************************************************************************************************************
     ARTICLE
 ***********************************************************************************************************************************/
@@ -1140,29 +1154,37 @@ img.roster-pic {
 }
 .item-page time {
   display:block;
-  width:82px;
-  height:82px;
-  line-height:52px;
+  width:78px;
+  height:78px;
+  line-height:48px;
   margin: 8px 0 0 -35px ;
   padding:6px;
   text-align:center;
   background:@orange;
-  font-size:48px;
+  font-size:44px;
   font-weight:700;
   color:@whitesmoke;
   .rounded-corners;
 }
 .item-page time span {
   display:block;
-  font-size:20px;
-  letter-spacing: 3px;
+  font-size:18px;
+  letter-spacing: 4px;
   line-height:40%;
 }
 .item-page aside {
   float: left;
   margin: 0 0 0 -10px;
   position: absolute;
-  width: 115px;
+  width: 100px;
+}
+.item-page aside div.btn-group ul.dropdown-menu li {
+  padding:  0 10px;
+}
+.item-page aside div.btn-group ul.dropdown-menu li a,
+.item-page aside div.btn-group ul.dropdown-menu li i.fa {
+  display: inline-block;
+
 }
 div.item-page aside div.btn-group {
   .transparent-whitesmoke;
@@ -1173,15 +1195,15 @@ div.item-page aside div.btn-group {
 }
 /* Beitragsinfo */
 dl.article-info {
-  .schrift-sm;
+  .schrift-xs;
   margin-bottom: 0;
   text-align: right;
 }
 dl.article-info dd, dl.article-info dt  {
-  line-height: 20px !important;
+  line-height: 18px !important;
 }
 .kp-article {
-  margin: -10px 5px 56px 135px;
+  margin: -10px 5px 56px 115px;
 }
 .kp-article-static{
   margin: -10px 0px 30px;
@@ -1251,8 +1273,6 @@ dl.article-info dd, dl.article-info dt  {
   .rounded-corners;
   .transparent-whitesmoke; 
 }
-
-
 /***********************************************************************************************************************************
 ************************************************************************************************************************************
                     FOOTER
@@ -1270,14 +1290,14 @@ dl.article-info dd, dl.article-info dt  {
   padding-bottom: 20px; 
 }
 .sitemap p { 
-  .schrift-lg;
+  .schrift-md;
   margin: 0;
   border-bottom: 1px dotted @grau;
-  padding: 5px 0;
+  padding: 4px 0;
 }
 .sitemap h1 { 
-  font: 24px/24px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: none;
-  margin: 20px 0 5px; 
+  font: 20px/20px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: none;
+  margin: 18px 0 5px; 
 }
 div.sitemap a:link, div.sitemap a:visited {
   border: 0;
@@ -1417,8 +1437,6 @@ img.footer-logo  {
   height: auto;
   width: auto;
 }
-
-
 /***********************************************************************************************************************************
 ************************************************************************************************************************************
                     OTHER LAYOUT
@@ -1559,8 +1577,6 @@ img.footer-logo  {
   padding: 0 6px;
   font-size: 9.75px;
 }
-
-
 /***********************************************************************************************************************************
     HELPER
 ***********************************************************************************************************************************/
@@ -1582,30 +1598,608 @@ img.footer-logo  {
 .ie7 .group {
   zoom: 1;
 }
-
 /***********************************************************************************************************************************
 ************************************************************************************************************************************
                            Media Queries
 ************************************************************************************************************************************
 ***********************************************************************************************************************************/
 
-/* Retina */
+/***********************************************************************************************************************************
+    Retina */
 @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (max--moz-device-pixel-ratio: 2) {
   
 }
-/* Landscape phones and down */
+/***********************************************************************************************************************************
+Landscape phones and down */
 @media (max-width: @screen-xs) {
+/* Hintergrundbild*/
+  #bgoverall {
+    min-height: 480px; 
+    background:url(../images/background/background-800.jpg) no-repeat top center @back-color;
+  }
   
 }
-/* Landscape phone to portrait tablet */
+/***********************************************************************************************************************************
+    Landscape phone to portrait tablet */
 @media (max-width: @screen-xs-max) {
+.componentheading, 
+h1 {font: 38px/44px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; .textshadow-white;}
+h2 {font: 34px/40px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; }
+h3 {font: 28px/34px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; .textshadow-white;}
+h4 {font: 24px/28px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+h5 {font: 20px/24px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+h6 {font: 14px/18px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+
+.mr-logo-size {
+  max-width: 180px;
+}
+/*  Latest News */
+.moduletable-news {
+  height: 100%;
+/*  max-height: 201px; */
+}
+
+/* Hintergrundbild*/
+  #bgoverall {
+    min-height: 700px; 
+    background:url(../images/background/background-1200.jpg) no-repeat top center @back-color;
+  }
   
 }
-/* Portrait tablet to landscape and desktop */
+/***********************************************************************************************************************************
+    Portrait tablet to landscape and desktop */
 @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+.componentheading, 
+h1 {font: 38px/44px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; .textshadow-white;}
+h2 {font: 34px/40px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; }
+h3 {font: 28px/34px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; .textshadow-white;}
+h4 {font: 24px/28px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+h5 {font: 20px/24px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+h6 {font: 14px/18px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+
+/* Rangers Schriftzug*/
+  .mr-schriftzug a img.mr-muenchen,
+  .mr-schriftzug-ticker a img.mr-muenchen {
+    width:169px;
+  }
+  .mr-schriftzug { 
+    margin: 8px 0 26px 4px;
+  }
+  .mr-schriftzug-ticker{
+    margin: 8px 0 8px 4px;
+  }
+/* HEADER Topmenu */
+#bgheader .container .row .navbar {
+  .abstand-unten-sm;
+  padding-right: 0px;
+  min-height: 36px;
+} 
+#bgheader .container .row .navbar .navbar-header {
+/*  min-height: 10px; */
+} 
+#bgheader .navbar .nav > li > a {
+  border-top: 2px solid transparent;
+  padding: 6px 6px;
+  .schrift-xs;
+} 
+#bgheader .navbar .nav > li > a:hover {
+  border-top: 2px solid @orange;
+}
+/* HEADER SEARCH */
+.mr-search {
+  .abstand-unten-sm;  
+  right: 0;
+}
+#bgheader  select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  padding: 5px 6px;
+  .schrift-xs;
+  line-height: 14px;
+}
+#mod-search-searchword {
+  margin-top:6px;
+}
+#bgheader div.mr-search .btn {
+  margin: 0 0 2px -4px;
+  padding: 3px 25px;
+}
+div#bgheader .teams {
+  .abstand-unten-sm;
+}
+#bgheader div.mr-search .btn {
+  .schrift-xs;
+  margin: 0 0 0px -4px;
+  padding: 3px 10px;
+}
+/* TICKER */
+#ticker {
+ .abstand-unten-sm;
+ margin-top: -10px;
+  min-height: 14px;
+}
+#ticker .gkHighlighterInterface {
+  padding: 1px 5px;
+}
+#ticker .gkHighlighterInterface span.text { 
+  .schrift-xs; 
+  margin: 0 2px 0 0;
+}
+#ticker .gkHighlighterWrapperSub {
+  position: relative;
+  min-height: 20px;
+  opacity: 1!important;
+}
+#ticker .gkHighlighterItem{
+  .schrift-xs; 
+  padding: 2px 0;
+  font-weight:bold;
+}
+#ticker div#gkHighlighterGK5-0.gkHighlighterGK5 div.gkHighlighterWrapper {
+  margin-left: 145px !important;
+}
+.margin-correct { 
+  .abstand-unten-sm;
+}
+.moduletable {
+  .abstand-unten-sm;
+}
+/* NAVBAR Menü Maximneu CK Logo  */
+div#bgoverall div#mainmenu_mr.maximenuckh div.maxiroundedcenter ul.maximenuck li.maximenucklogo a img, 
+div#bgoverall div#mainmenu_mr.maximenuckh div.maxiroundedcenter ul.menu li.maximenucklogo a img {
+    width: 200px;
+    margin: -15px 0 0 -135px !important;
+}
+ /* NAVBAR Maximneu CK Menü Level1 Hintergrund + Abstand */
+div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck.level1 {
+  margin-right: 2px;
+}
+  /* MenüNAVBAR Maximneu CK Level1 Farbe, Größe + Abstand */
+div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck.level1 > a  {
+  font: 19px/19px 'alternate_gothic_3Rg', sans-serif; 
+  min-height: 30px;
+  padding: 10px 5px;
+}
+div#bgoverall div#mainmenu_mr ul.maximenuck li.level1.parent > a, 
+div#mainmenu_mr ul.maximenuck li.level1.parent > span.separator {
+  padding: 10px 11px 10px 4px;
+  margin-right: 5px;
+  background-size: 10px 10px;
+}
+/* Sublevel items - level 2 to n */
+div#bgoverall div#mainmenu_mr ul.maximenuck li ul.maximenuck2 li.maximenuck,
+div#bgoverall div#mainmenu_mr ul.maximenuck2 li.maximenuck {
+  .schrift-sm;
+}
+div#bgoverall div#mainmenu_mr.maximenuckh ul.maximenuck2 li.maximenuck span.separator span.titreck {
+  font: 19px/19px 'alternate_gothic_3Rg', sans-serif; 
+  min-height: 17px;
+}
+div#bgoverall div#mainmenu_mr.maximenuckh ul.maximenuck2 li.maximenuck span.separator span.descck {
+  font: 12px/12px 'alternate_gothic_3Rg', sans-serif; 
+  min-height: 17px;
+}
+/* Hintergrundbild*/
+  #bgoverall {
+    min-height: 720px; 
+    background:url(../images/background/background-1213.jpg) no-repeat top center @back-color;
+  }
+/*  Latest News */
+.moduletable-news {
+  height: 201px;
+  max-height: 201px;
+}
+/*  Slideshow */
+div#bgoverall div#camera_wrap_111.slideshowck-kpslideshow {
+  max-height: 384px;
+  .abstand-unten-sm !important;
+}
+div#bgoverall div.slideshowck-kpslideshow div.camera_pag ul.camera_pag_ul li img.camera_thumb{
+  top: 24px !important;
+} 
+.camera_caption_title {
+  font: 32px/40px 'alternate_gothic_2Rg',Arial,sans-serif;
+}
+div.camera_caption_desc {
+  .schrift-sm;
+}
+/* SPONSOREN */
+.sponsor1 {
+  .abstand-unten-sm;
+  padding: 1px 5px;
+}
+.sponsor1 p {
+  margin: 3px 0;
+}
+.sponsor1 p a img {
+  max-width: 142px;
+  max-height: 55px;
+}
+/*  GAMECENTER */
+.game-center-scoreboard {
+  width: 410px;
+}
+.game-center-away-team img, 
+.game-center-home-team img {
+  max-width: 105px;
+}
+.game-center-scoreboard .score a {
+  font: 64px/70px 'alternate_gothic_3Rg', sans-serif;
+  font-weight: bold;
+  width: 80px;
+  height: 70px;
+}
+.game-center-time-left {
+  width: 40px;
+  height: 70px;
+}
+.game-center-time-final a {
+  font-size: 28px;
+  line-height: 28px;
+  margin: 22px 0 0 0;
+}
+
   
 }
-/* Large desktop */
+/***********************************************************************************************************************************
+    Large desktop */
 @media (min-width: @screen-lg) {
-  
+.componentheading, 
+h1 {font: 46px/54px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; .textshadow-white;}
+h2 {font: 38px/46px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; }
+h3 {font: 32px/38px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; .textshadow-white;}
+h4 {font: 28px/34px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+h5 {font: 22px/30px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+h6 {font: 16px/24px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+/* Rangers Schriftzug*/
+  .mr-schriftzug a img.mr-muenchen,
+  .mr-schriftzug-ticker a img.mr-muenchen {
+    width:300px;
+  }
+  .mr-schriftzug { 
+    margin: 10px 0 30px 7px;
+  }
+  .mr-schriftzug-ticker{
+    margin: 14px 0 5px 7px;
+  }
+.mr-logo-size {
+  max-width: 300px;
+}
+/* HEADER Topmenu */
+#bgheader .container .row .navbar {
+  .abstand-unten-lg;
+  padding-right: 0px;
+  min-height: 36px;
+} 
+#bgheader .container .row .navbar .navbar-header {
+/*  min-height: 10px; */
+} 
+#bgheader .navbar .nav > li > a {
+  border-top: 3px solid transparent;
+  padding: 8px 13px;
+  .schrift-md;
+} 
+#bgheader .navbar .nav > li > a:hover {
+  border-top: 3px solid @orange;
+}
+/* HEADER SEARCH */
+.mr-search {
+  .abstand-unten-lg;  
+  right: 0;
+}
+#bgheader  select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  padding: 6px 6px;
+  .schrift-lg;
+  line-height: 14px;
+}
+#mod-search-searchword {
+  margin-top:8px;
+}
+#bgheader div.mr-search .btn {
+  .schrift-lg;
+  margin: 0 0 2px -4px;
+  padding: 3px 25px;
+}
+div#bgheader .teams {
+  .abstand-unten-lg;
+}
+/* TICKER */
+#ticker {
+ .abstand-unten-lg;
+  min-height: 14px;
+}
+#ticker .gkHighlighterInterface {
+  padding: 3px 7px;
+}
+#ticker .gkHighlighterInterface span.text { 
+  .schrift-lg; 
+}
+#ticker .gkHighlighterItem{
+  padding: 2px 0;
+  .schrift-lg; 
+}
+#ticker div#gkHighlighterGK5-0.gkHighlighterGK5 div.gkHighlighterWrapper {
+  margin-left: 200px !important;
+}
+/* Hintergrundbild*/
+  #bgoverall {
+    min-height: 1100px; 
+    background:url(../images/background/background-1920.jpg) no-repeat top center @back-color;
+  }
+.margin-correct { 
+  .abstand-unten-lg;
+}
+.moduletable {
+  .abstand-unten-lg;
+}
+.moduletable h3,
+.moduletable-news h3,
+.moduletable-gamecenter h3 {
+  font: 30px/38px 'alternate_gothic_3Rg', Arial, sans-serif; 
+}
+/* NAVBAR Menü Maximneu CK Logo  */
+div#bgoverall div#mainmenu_mr.maximenuckh div.maxiroundedcenter ul.maximenuck li.maximenucklogo a img, 
+div#bgoverall div#mainmenu_mr.maximenuckh div.maxiroundedcenter ul.menu li.maximenucklogo a img {
+    width: 286px;
+    margin: -25px 0 0 -150px !important;
+}
+  /* MenüNAVBAR Maximneu CK Level1 Farbe, Größe + Abstand */
+div#bgoverall div#mainmenu_mr ul.maximenuck li.maximenuck.level1 > a  {
+  font: 25px/22px 'alternate_gothic_3Rg', sans-serif; 
+  min-height: 30px;
+  padding: 10px 10px;
+}
+div#bgoverall div#mainmenu_mr ul.maximenuck li.level1.parent > a, 
+div#mainmenu_mr ul.maximenuck li.level1.parent > span.separator {
+  padding: 10px 15px 10px 10px;
+  margin-right: 5px;
+  background-size: 10px 10px;
+}
+/* Sublevel items - level 2 to n */
+div#bgoverall div#mainmenu_mr ul.maximenuck li ul.maximenuck2 li.maximenuck,
+div#bgoverall div#mainmenu_mr ul.maximenuck2 li.maximenuck {
+  .schrift-lg;
+}
+div#bgoverall div#mainmenu_mr.maximenuckh ul.maximenuck2 li.maximenuck span.separator span.titreck {
+  font: 24px/24px 'alternate_gothic_3Rg', sans-serif; 
+  min-height: 17px;
+}
+div#bgoverall div#mainmenu_mr.maximenuckh ul.maximenuck2 li.maximenuck span.separator span.descck {
+  font: 14px/14px 'alternate_gothic_3Rg', sans-serif; 
+  min-height: 17px;
+}
+/*  Latest News */
+.moduletable-news {
+  height: 400px;
+  max-height: 400px;
+}
+.moduletable-news ul.latestnews-news { 
+  margin: 0 10px 10px;
+}
+.moduletable-news ul.latestnews-news li,
+.moduletable ul.rsepro_upcoming li  {
+  padding: 5px 0;
+} 
+.moduletable-news ul.latestnews-news li a {
+  .schrift-lg;
+  line-height: 18px;
+}
+/*  Slideshow */
+div#bgoverall div#camera_wrap_111.slideshowck-kpslideshow {
+  max-height: 400px;
+  .abstand-unten-lg !important;
+}
+div#bgoverall div.slideshowck-kpslideshow div.camera_pag ul.camera_pag_ul li img.camera_thumb{
+  top: 24px !important;
+} 
+.camera_caption_title {
+  font: 40px/48px 'alternate_gothic_2Rg',Arial,sans-serif;
+}
+div.camera_caption_desc {
+  .schrift-lg;
+}
+/* SPONSOREN */
+.sponsor1 {
+  .abstand-unten-lg;
+  padding: 1px 5px;
+}
+.sponsor1 p {
+  margin: 3px 0;
+}
+.sponsor1 p a img {
+  max-width: 142px;
+  max-height: 55px;
+}
+/* Ergebnistabellen Front Page */
+.nav-tabs > li > a,
+.nav-pills > li > a {
+  font: 17px/14px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; 
+  padding: 8px 6px;
+  margin-right: 1px;
+}
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover {
+  font: 17px/14px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; 
+}
+.mr-tab {
+  .schrift-md;
+}
+.moduletable div.custom div.tab-content {
+  padding: 0 5px;
+}
+#bgoverall div#overall div.moduletable table.table{
+  margin-bottom: 8px;
+}
+/* EVENTS */
+.moduletable ul.rsepro_upcoming {
+  margin: 0 10px 10px;
+}
+.moduletable ul.rsepro_upcoming li a {
+  .schrift-lg;
+  line-height: 18px;
+}
+#rsegetdir {
+  margin-bottom: 3px;
+}
+#rseprosearch {
+  height: 22px;
+}
+#bgoverall div.kp-content .rs_input {
+  height: 22px;
+  .schrift-sm;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#bgoverall div.kp-content form#adminForm div.rs_search div.rs_select_top input#rseprosearch.rs_input {
+  padding: 0 5px;
+}
+#bgoverall .moduletable .rs_calendar_module table.rs_table {
+  font: 26px/32px 'alternate_gothic_3Rg', Arial, sans-serif; 
+}
+#bgoverall .moduletable .rs_calendar_module table.rs_calendar_module {
+  .schrift-lg;
+  font-family: Arial, sans-serif;
+}
+#bgoverall .moduletable .rs_calendar_arrows_module {
+  padding: 10px;
+}  
+/* SPIELPLAN */
+.spielplan {
+  width: 788px;
+}
+.spielplan-subheader{
+  font: normal normal 26px 'alternate_gothic_3Rg', sans-serif;
+}
+.spielplan .spielplan-team a,
+.spielplan .spielplan-time a, 
+.spielplan .spielplan-date a,
+.spielplan .spielplan-day a {
+  font: normal normal 26px/40px 'alternate_gothic_3Rg', sans-serif;
+}
+.spielplan .spielplan-date a {
+  width: 75px;
+}
+.spielplan .spielplan-day a {
+  width: 35px;
+}
+.spielplan .spielplan-time a {
+  width: 70px;
+}
+.spielplan .spielplan-team .home-name a, 
+.spielplan .spielplan-team .away-name a {
+  width: 200px;
+} 
+.spielplan .spielplan-team.home img, 
+.spielplan .spielplan-team.away img {
+  max-width: 45px;
+}
+.spielplan .spielplan-vs a {
+  min-width: 20px;
+  font: 14px/40px 'alternate_gothic_3Rg', sans-serif;
+}
+.spielplan .spielplan-team .home-score a,
+.spielplan .spielplan-team .away-score a {
+  width: 48px;
+}
+/*  GAMECENTER */
+.game-center-header-date a,
+.game-center-header-desc a {
+  font: normal normal 20px/20px 'alternate_gothic_3Rg', sans-serif;
+}
+.game-center-scoreboard {
+  height: 105px;
+  width: 490px;
+  margin: 0 0 10px 34px;
+}
+.game-center-away-team img, 
+.game-center-home-team img {
+  max-width: 120px;
+}
+.game-center-scoreboard .score a {
+  font: 76px/82px 'alternate_gothic_3Rg', sans-serif;
+  font-weight: bold;
+  width: 100px;
+  height: 80px;
+}
+.game-center-time-left {
+  width: 50px;
+  height: 80px;
+}
+.game-center-time-final a {
+  font-size: 36px;
+  line-height: 36px;
+  margin: 25px 0 0 0;
+}
+.carousel-control,
+.carousel-control:focus  {
+  font-size: 48px;
+  width: 40px; 
+  top: 25px;
+}
+/*   ROSTER */
+.roster-header {
+  font: 30px/40px 'alternate_gothic_3Rg', Arial, sans-serif; 
+}
+.roster-pos {
+  font: 96px/96px 'alternate_gothic_1Rg', Arial, sans-serif; 
+  margin-bottom: 90px;
+}
+.roster-name {
+  font: 48px/48px 'alternate_gothic_1Rg', Arial, sans-serif; 
+}
+.roster-vorname {
+  font: 32px/18px 'alternate_gothic_2Rg', Arial, sans-serif; 
+}
+.roster-text, 
+.award-text {
+  font: 26px/26px 'alternate_gothic_3Rg', Arial, sans-serif; 
+}
+img.roster-flag {
+  max-width: 50px;
+  margin-left: -3px;
+}
+img.roster-pic {
+  max-width: 110px;
+}
+.panel-heading {
+  padding-top: 5px;
+  padding-bottom: 3px;
+}
+/*  ARTICLE */
+.item-page time {
+  width:82px;
+  height:82px;
+  line-height:52px;
+  margin: 8px 0 0 -35px ;
+  padding:6px;
+  font-size:48px;
+}
+.item-page time span {
+  font-size:20px;
+  letter-spacing: 3px;
+  line-height:40%;
+}
+.item-page aside {
+  margin: 0 0 0 -10px;
+  width: 115px;
+}
+/* Beitragsinfo */
+dl.article-info {
+  .schrift-sm;
+}
+dl.article-info dd, dl.article-info dt  {
+  line-height: 20px !important;
+}
+.kp-article {
+  margin: -10px 5px 56px 135px;
+}
+/*  SITEMAP */
+.sitemap p { 
+  .schrift-lg;
+}
+.sitemap h1 { 
+  font: 24px/24px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: none;
+  margin: 20px 0 5px; 
+}
+
+
+
 }

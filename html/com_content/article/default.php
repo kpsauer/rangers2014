@@ -106,16 +106,26 @@ if (!empty($this->item->pagination) AND $this->item->pagination && !$this->item-
 			<ul class="dropdown-menu">
 				<?php if (!$this->print) : ?>
 				<?php if ($params->get('show_print_icon')) : ?>
-				<li class="print-icon"> <?php echo JHtml::_('icon.print_popup',  $this->item, $params); ?> </li>
+				<li > 
+					<i class="fa fa-print"></i> 
+					<?php echo JHtml::_('icon.print_popup',  $this->item, $params); ?> 
+				</li>
 				<?php endif; ?>
 				<?php if ($params->get('show_email_icon')) : ?>
-				<li class="email-icon"> <?php echo JHtml::_('icon.email',  $this->item, $params); ?> </li>
+				<li > 
+					<i class="fa fa-envelope"></i>
+					<?php echo JHtml::_('icon.email',  $this->item, $params); ?> 
+				</li>
 				<?php endif; ?>
 				<?php if ($canEdit) : ?>
-				<li class="edit-icon"> <?php echo JHtml::_('icon.edit', $this->item, $params); ?> </li>
+				<li class="edit-icon"> 
+					<?php echo JHtml::_('icon.edit', $this->item, $params); ?> 
+				</li>
 				<?php endif; ?>
 				<?php else : ?>
-				<li> <?php echo JHtml::_('icon.print_screen',  $this->item, $params); ?> </li>
+				<li> 
+					<?php echo JHtml::_('icon.print_screen',  $this->item, $params); ?> 
+				</li>
 				<?php endif; ?>
 			</ul>
 		</div>
