@@ -1,0 +1,579 @@
+/*------------------------------------------------------------------------
+# author  Klaus-Peter Sauer
+# version   1.5.0 April 27, 2014
+# package München Rangers Joomla Template 2014
+# copyright Copyright © 2013 by Klaus-Peter Sauer - All rights reserved.
+# @license  http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+# Website http://www.muenchen-rangers.de
+-------------------------------------------------------------------------*/
+// normalize
+
+// colors
+// @back-color: #222222;
+@back-color: #000000;
+@white: #FFFFFF;
+@whitesmoke: #F5F5F5;
+@black: #000000;
+@orange: #FF6600;
+@dunkelrot: #B6061E;
+@anthrazit: #1b1b1b;
+@grau: #808080;
+@taupe-grau: #8B8589;
+@mittelgrau: #a9a9a9;
+@lightgray: #DDDDDD;
+@shadow: #C7C7C7;
+
+// MIXINS
+.textshadow-white {
+  text-shadow: -1px 1px 1px @white;
+}
+.abstand-unten-lg {
+  margin-bottom: 15px;
+}
+.abstand-unten-md {
+  margin-bottom: 10px;
+}
+.abstand-unten-sm {
+  margin-bottom: 8px;
+}
+.schrift-lg {
+  font-size: 14px;
+}  
+.schrift-md {
+  font-size: 13px;
+}  
+.schrift-sm {
+  font-size: 12px;
+}  
+.schrift-xs {
+  font-size: 11px;
+}  
+.schrift-xxs {
+  font-size: 10px;
+}  
+.rounded-corners (@radius: 4px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+.rounded-corners-left (@radius: 4px) {
+  -webkit-border-radius: @radius 0 0 @radius;
+  -moz-border-radius: @radius 0 0 @radius;
+  -ms-border-radius: @radius 0 0 @radius;
+  -o-border-radius: @radius 0 0 @radius;
+  border-radius: @radius 0 0 @radius;
+}
+.rounded-corners-right (@radius: 4px) {
+  -webkit-border-radius: 0 @radius @radius 0;
+  -moz-border-radius: 0 @radius @radius 0;
+  -ms-border-radius: 0 @radius @radius 0 ;
+  -o-border-radius: 0 @radius @radius 0;
+  border-radius: 0 @radius @radius 0;
+}
+.rounded-corners-bottom (@radius: 4px) {
+  -webkit-border-radius: 0 0 @radius @radius;
+  -moz-border-radius: 0 0 @radius @radius;
+  -ms-border-radius: 0 0 @radius @radius;
+  -o-border-radius: 0 0 @radius @radius;
+  border-radius: 0 0 @radius @radius;
+}
+.transparent-whitesmoke {
+   /* Fallback for web browsers that doesn't support RGBa background-color:#f5f5f5;*/
+  background: rgb(245, 245, 245);
+  /* RGBa with 0.8 opacity */
+  background: rgba(245, 245, 245, 0.8);
+  /* For IE 5.5 - 7
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCf5f5f5, endColorstr=#CCf5f5f5);*/
+  /* For IE 8*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCf5f5f5, endColorstr=#CCf5f5f5)";
+}
+.transparent-black {
+  /* Fallback for web browsers that doesn't support RGBa background-color:#222222;*/
+  background: rgb(34, 34, 34);
+  /* RGBa with 0.8 opacity */
+  background: rgba(34, 34, 34, 0.8);
+  /* For IE 8*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC222222, endColorstr=#CC222222)";
+}
+/***********************************************************************************************************************************
+************************************************************************************************************************************
+                    FONTS
+************************************************************************************************************************************
+***********************************************************************************************************************************/
+@font-face {
+    font-family: 'alternate_gothic_1Rg';
+    src: url('../fonts/AlternateGothicNo1-webfont.eot');
+    src: url('../fonts/AlternateGothicNo1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AlternateGothicNo1-webfont.woff') format('woff'),
+         url('../fonts/AlternateGothicNo1-webfont.ttf') format('truetype'),
+         url('../fonts/AlternateGothicNo1-webfont.svg#alternate_gothic_1Rg') format('svg');
+    font-weight: normal;
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'alternate_gothic_2Rg';
+    src: url('../fonts/AlternateGothicNo2-webfont.eot');
+    src: url('../fonts/AlternateGothicNo2-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AlternateGothicNo2-webfont.woff') format('woff'),
+         url('../fonts/AlternateGothicNo2-webfont.ttf') format('truetype'),
+         url('../fonts/AlternateGothicNo2-webfont.svg#alternate_gothic_2Rg') format('svg');
+    font-weight: normal;
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'alternate_gothic_3Rg';
+    src: url('../fonts/AlternateGothicNo3-webfont.eot');
+    src: url('../fonts/AlternateGothicNo3-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AlternateGothicNo3-webfont.woff') format('woff'),
+         url('../fonts/AlternateGothicNo3-webfont.ttf') format('truetype'),
+         url('../fonts/AlternateGothicNo3-webfont.svg#alternate_gothic_3Rg') format('svg');
+    font-weight: normal;
+    font-style: normal; 
+}
+.componentheading, 
+h1 {font: 42px/50px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; .textshadow-white;}
+h2 {font: 36px/44px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; }
+h3 {font: 32px/38px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; .textshadow-white;}
+h4 {font: 28px/32px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+h5 {font: 22px/28px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+h6 {font: 16px/20px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0;}
+/***********************************************************************************************************************************
+  FRONTEND LESS
+***********************************************************************************************************************************/
+html {
+  overflow-y: scroll;
+}
+body {
+  .schrift-lg;
+  margin-top:0px;
+  background-color:@back-color;
+}
+a {
+  color:@orange; 
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color:@anthrazit;
+  text-decoration: none;
+}
+/***********************************************************************************************************************************
+    SPONSOREN
+***********************************************************************************************************************************/
+.sponsor1 {
+  .abstand-unten-md;
+  padding: 1px 5px;
+  text-align: center;
+}
+.sponsor1 p {
+  margin: 3px 0;
+}
+.sponsor2 {
+  text-align: center;
+}
+/* not used */
+.logout {
+  .abstand-unten-md;
+  padding: 5px;
+  text-align: center;
+}  
+div#bgoverall div#overall div.container div.logout form#login-form {
+  margin: 0 0 5px;
+}
+.sponsor1 p a img {
+  max-width: 125px;
+  max-height: 38px;
+}
+img.sponsor-detail {
+  max-width: 200px;
+  width:auto; 
+} 
+/***********************************************************************************************************************************
+                            TABELLE
+***********************************************************************************************************************************/
+ div#bgoverall div#overall div.kp-content div.margin-content div.kp-article-static div.table-responsive table.table tbody tr td {
+  vertical-align: middle;
+}
+a.table-img img {
+  max-width: 45px;
+  width: auto;
+  margin: 0;
+  .rounded-corners;
+}
+/***********************************************************************************************************************************
+                            SPIELPLAN
+***********************************************************************************************************************************/
+.spielplan-gesamt { 
+  margin-top: 15px;
+}
+.spielplan {
+  height: 44px;
+  width: 637px;
+  margin: 10px 0;
+  padding: 2px 0;
+  border: 1px solid @whitesmoke;
+  .rounded-corners;
+}
+.aktuell,
+.spielplan:hover {
+  .transparent-whitesmoke;
+}
+.spielplan-subheader{
+  font: normal normal 24px 'alternate_gothic_3Rg', sans-serif;
+  margin-top: 20px;
+  color: @grau;
+  text-transform: uppercase;
+}
+.spielplan .spielplan-team a,
+.spielplan .spielplan-time a, 
+.spielplan .spielplan-date a,
+.spielplan .spielplan-day a {
+  float: left;
+  font: normal normal 24px/40px 'alternate_gothic_3Rg', sans-serif;
+  color: @anthrazit;
+  text-transform: uppercase;
+}
+.spielplan .spielplan-date a {
+  padding-left: 10px;
+  width: 60px;
+}
+.spielplan .spielplan-day a {
+  width: 27px;
+  text-align: center;
+}
+.spielplan .spielplan-time a {
+  float: right;
+  width: 50px;
+  padding-right: 10px;  
+  text-align: center;
+}
+.spielplan .spielplan-team .home-name a, 
+.spielplan .spielplan-team .away-name a {
+  float: left;
+  width: 155px;
+  padding: 0 10px;
+} 
+.spielplan .spielplan-team .home-name.rangers a, 
+.spielplan .spielplan-team .away-name.rangers a {
+  color:@orange;
+}
+.spielplan .spielplan-team .home-name a {
+  text-align: right;
+}
+.spielplan .spielplan-team .away-name a {
+  text-align: left;
+}
+.spielplan .spielplan-team.home img, 
+.spielplan .spielplan-team.away img {
+  max-width: 45px;
+  width: auto;
+  vertical-align: top;
+  margin: 4px 0 0 0;
+  .rounded-corners;
+}
+.spielplan .spielplan-team.away img {
+  float: left;
+}
+.spielplan .spielplan-vs a {
+  float: left;
+  min-width: 14px;
+  font: 13px/40px 'alternate_gothic_3Rg', sans-serif;
+  color: @grau;
+  text-align: center;
+  text-transform: uppercase;
+}
+.spielplan .spielplan-team .home-score a,
+.spielplan .spielplan-team .away-score a {
+  text-align: center;
+  color: @anthrazit;
+  display: block;
+  height: 40px;
+  width: 42px;
+  margin: 0px 0 0 0;
+  vertical-align: middle;
+}
+.spielplan .spielplan-team .home-name.lost a ,
+.spielplan .spielplan-team .away-name.lost a,
+.spielplan .spielplan-team .home-score.lost a, 
+.spielplan .spielplan-team .away-score.lost a {
+  color: @grau;
+}
+.ohne-gewaehr {
+  font-size: 8pt;
+  margin: 20px 0 10px 0;
+}
+
+/***********************************************************************************************************************************
+                            GAMECENTER
+***********************************************************************************************************************************/
+.moduletable-gamecenter {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  padding: 1px 0;
+  background-color: none;
+/*  min-height: 130px; */
+}
+/***********************************************************************************************************************************
+    GAMECENTER - HEADER
+***********************************************************************************************************************************/
+.cf {
+  zoom: 1;
+} 
+.game-center-header {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  margin-bottom: 0px;
+  padding: 0 1px ;
+}
+.game-center-header-desc{
+  float:left;
+}
+.game-center-header-date {
+  float: right;
+}
+.game-center-header-date a,
+.game-center-header-desc a {
+  font: normal normal 19px/19px 'alternate_gothic_3Rg', sans-serif;
+  color: @dunkelrot;
+  text-transform: uppercase;
+}
+/***********************************************************************************************************************************
+    GAMECENTER - SCOREBOARD
+***********************************************************************************************************************************/
+.game-center-scoreboard {
+  .textshadow-white;
+  height: 98px;
+  width: 396px;
+  margin: 0 0 0px 32px;
+}
+.game-center-away-team {
+  float: right;
+}
+.game-center-home-team {
+  float: left;
+}
+.game-center-away-team img, 
+.game-center-home-team img {
+  max-width: 100px;
+  width: auto;
+}
+.game-center-away-team img {
+  float: right;
+  margin: 1px 0 0 0;
+  .rounded-corners-right;
+}
+.game-center-home-team img {
+  float: left;
+  margin: 1px 0 0 0;
+  .rounded-corners-left;
+}
+.game-center-away-team .score,
+.game-center-home-team .score {
+  .transparent-whitesmoke;
+  margin: 1px 0 0 0;
+  vertical-align: middle;
+}
+.game-center-away-team .score {
+  float: right;
+  .rounded-corners-left;
+}
+.game-center-home-team .score {
+  float: left;
+  .rounded-corners-right;
+}
+.game-center-scoreboard .score a {
+  font: 64px/67px 'alternate_gothic_3Rg', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;  
+  color: @anthrazit;
+  display: block;
+  width: 80px;
+  height: 67px;
+}
+.game-center-scoreboard .score.lost a {
+  color: @grau;
+  text-shadow: -1px 1px 1px @shadow;
+}
+.game-center-scoreboard .score.won a {
+  text-shadow: -1px 1px 1px @shadow;
+}
+.game-center-time-left {
+  float: left;
+  width: 36px;
+  height: 67px;
+  font-family: 'alternate_gothic_3Rg',sans-serif;
+}
+.game-center-time-final a {
+  display: block;
+  text-align: center;
+  font-size: 28px;
+  line-height: 28px;
+  color: @anthrazit;
+  margin: 20px 0 0 0;
+  position: relative;
+}
+/***********************************************************************************************************************************
+    NFL Scoreboard Options -> BOOSTRAP Carousel
+***********************************************************************************************************************************/
+.carousel-control,
+.carousel-control:focus  {
+  color: @anthrazit;
+  font-size: 48px;
+  opacity: 0.5;
+  width: 32px; 
+  top: 20px;
+}
+.carousel-control.right, 
+.carousel-control.left {
+  background-image: none;
+  background-repeat: no-repeat;
+}
+.carousel-control.right {
+  left:auto;
+  right: -3px;
+}
+.carousel-control.left {
+  left:0px;
+  right:auto;
+}
+.carousel-control .icon-prev, .carousel-control .icon-chevron-left {
+  left: 0%;
+}
+.carousel-control .icon-next, .carousel-control .icon-chevron-right {
+  right: 0%;
+  left: auto;
+}
+.carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .icon-chevron-left, .carousel-control .icon-chevron-right {
+/*  line-height: 42px; */
+}
+div.moduletable-gamecenter .carousel{
+  margin-bottom: 0px;
+}
+/***********************************************************************************************************************************
+                Ergebnistabellen Front Page
+***********************************************************************************************************************************/
+.nav-tabs {
+  border-bottom: 1px solid @grau;
+}
+.nav-tabs > li > a,
+.nav-pills > li > a {
+  font: 15px/12px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; 
+  padding: 6px 4px;
+  margin-right: 1px;
+  text-transform: uppercase;
+}
+.nav-tabs > li > a {
+  border: 1px solid transparent; 
+}
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover {
+  font: 15px/12px 'alternate_gothic_3Rg', Arial, sans-serif; letter-spacing: 0; 
+  border: 1px solid @grau;
+  border-bottom-color: transparent;
+  .transparent-whitesmoke;
+}
+.mr-tab {
+  .schrift-sm;
+  .transparent-whitesmoke;
+}
+.moduletable div.custom div.tab-content {
+  border-top-color: transparent;
+  padding: 0 5px;
+}
+#bgoverall div#overall div.moduletable table.table{
+  margin-bottom: 8px;
+}
+
+/***********************************************************************************************************************************
+                    ROSTER
+***********************************************************************************************************************************/
+.roster-header, 
+.roster-pos,
+.roster-name,
+.roster-vorname,
+.roster-text, 
+.award-text {
+  letter-spacing: 0; 
+  .textshadow-white;
+}
+.roster-header {
+  font: 26px/34px 'alternate_gothic_3Rg', Arial, sans-serif; 
+  text-transform: uppercase;
+}
+.roster-pos {
+  font: 80px/82px 'alternate_gothic_1Rg', Arial, sans-serif; 
+  color: @mittelgrau;
+  text-align: right;
+  margin-bottom: 90px;
+}
+.roster-name {
+  font: 40px/40px 'alternate_gothic_1Rg', Arial, sans-serif; 
+}
+.roster-vorname {
+  font: 28px/16px 'alternate_gothic_2Rg', Arial, sans-serif; 
+}
+.roster-text, 
+.award-text {
+  font: 24px/24px 'alternate_gothic_3Rg', Arial, sans-serif; 
+  font-variant: small-caps; 
+  color: @grau;
+}
+img.roster-flag {
+  max-width: 44px;
+  width: auto;
+  margin-left: -3px;
+}
+img.roster-pic {
+  max-width: 100px;
+  width: auto;
+}
+/* .panel {
+  background-color: transparent;
+} */
+.panel-heading {
+  padding-top: 5px;
+  padding-bottom: 3px;
+}
+.panel,
+.panel-default > .panel-heading {
+  background-color: transparent;
+}
+.panel-title {
+  color: @orange;
+}
+.panel-default {
+  border: 2px solid @grau;
+}
+.panel-group .panel-heading + .panel-collapse .panel-body {
+  border-top: 1px transparent none;
+}
+
+/***********************************************************************************************************************************
+    SITEMAP
+***********************************************************************************************************************************/
+.sitemap  {
+  color:@grau; 
+  padding-bottom: 20px; 
+}
+.sitemap p { 
+  .schrift-md;
+  margin: 0;
+  border-bottom: 1px dotted @grau;
+  padding: 4px 0;
+}
+.sitemap h1 { 
+  font: 20px/20px 'alternate_gothic_2Rg', Arial, sans-serif; letter-spacing: 0; text-shadow: none;
+  margin: 18px 0 5px; 
+}
+div.sitemap a:link, div.sitemap a:visited {
+  border: 0;
+  color:@grau; 
+  font-weight:normal; 
+  text-decoration:none;
+}
+div.sitemap a:hover {
+  color:@orange;
+}
+

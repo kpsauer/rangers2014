@@ -16,7 +16,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
 
 <head>
   <jdoc:include type="head" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <link rel="apple-touch-icon-precomposed" href="<?php echo $tpath; ?>/images/apple-touch-icon-57x57-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $tpath; ?>/images/apple-touch-icon-72x72-precomposed.png">
@@ -41,20 +41,15 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
   </script>
   
   <!--[if lte IE 8]>
-    <script type='text/javascript' src="<?php echo $tpath.'/js/respond.proxy.js'; ?>"></script>
+    <script type=2text/javascript" src="<?php echo $tpath.'/js/respond.proxy.js'; ?>"></script>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <?php if ($pie==1) : ?>
       <style> 
-      #bgheader, div#bgheader .teams, .mr-schriftzug, .mr-schriftzug-ticker, .navbar, .navbar-inverse, .tip, .kp-content, h3.moduletable , .moduletable, .mr-tab, .uneditable-input:focus, li.level1.parent > a, li.level1.parent > span.separator, li.level1.parent, ul.menu li.maximenucklogo a img, .game-center-away-team .score, .game-center-home-team .score, img.game-center-home-team, img.game-center-away-team
+      #bgheader, div#bgheader .teams, .mr-schriftzug, .mr-schriftzug-ticker, .navbar, .navbar-inverse, .tip, .kp-content, h3.moduletable , .moduletable, .mr-tab, .uneditable-input:focus, .game-center-away-team .score, .game-center-home-team .score, img.game-center-home-team, img.game-center-away-team
         {behavior:url(<?php echo $tpath; ?>/js/PIE.htc);}
       </style>
     <?php endif; ?>
   <![endif]-->
-  
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-<![endif]-->
 </head>
 <body class="<?php echo (($menu->getActive() == $menu->getDefault()) ? ('front') : ('page')).' '.$active->alias.' '.$pageclass; ?>">
   <a name="toTop" id="toTop" ></a>

@@ -16,11 +16,28 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
 
 <head>
   <jdoc:include type="head" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <link rel="apple-touch-icon-precomposed" href="<?php echo $tpath; ?>/images/apple-touch-icon-57x57-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $tpath; ?>/images/apple-touch-icon-72x72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $tpath; ?>/images/apple-touch-icon-114x114-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $tpath; ?>/images/apple-touch-icon-144x144-precomposed.png">
+  <link rel="stylesheet" href="templates/rangers2014/css/tooltip.css">
+  <script src="templates/rangers2014/js/jquery-ui-1.10.4.custom.js"></script>
+  <script>
+   jQuery(document).ready(function() {
+    jQuery( '.rs_calendar_module' ).tooltip();  
+   });
+
+  </script>
+  <script type="text/javascript" src="<?php echo $tpath.'/js/easing.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $tpath.'/js/jquery.ui.totop.js'; ?>" ></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function() {
+      jQuery().UItoTop({ easingType: 'easeOutQuart' });
+    });
+    
+  </script>
   <!--[if lte IE 8]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <?php if ($pie==1) : ?>
@@ -31,10 +48,6 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
     <?php endif; ?>
   <![endif]-->
 </head>
-
-
-
-  
 <body class="<?php echo (($menu->getActive() == $menu->getDefault()) ? ('front') : ('page')).' '.$active->alias.' '.$pageclass; ?>">
   <a name="toTop" id="toTop" ></a>
 <!-- ************************************************
@@ -49,7 +62,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
     <div class="container">
       <div class="row">
         <!-- ***** München Rangers Schriftzug ***** -->
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-3 col-xs-4">
               <?php if($this->countModules('ticker')) :?>
                 <div class="mr-schriftzug-ticker">
                   <a href="index.php">
@@ -64,24 +77,24 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
                 </div>
               <?php endif; ?> 
             </div>
-        <div class="col-md-8">
+        <div class="col-md-8 col-sm-9 col-xs-8">
           <div class="row">
             <?php if($this->countModules('topmenu')) :?>
-              <div class="navbar navbar-inverse col-md-7" role="navigation">
+              <div class="navbar navbar-inverse col-md-7 col-sm-7 hidden-xs" role="navigation">
                 <div class="navbar-header">
                   <jdoc:include type="modules" name="topmenu" />
                 </div>
               </div>
             <?php endif; ?> 
             <?php if($this->countModules('search')) :?>
-              <div class="mr-search col-md-5">
+              <div class="mr-search col-md-5 col-sm-5 hidden-xs">
                 <jdoc:include type="modules" name="search" />
               </div>
             <?php endif; ?> 
           </div>
           <div class="row">
             <?php if($this->countModules('teamlinks')) :?>
-              <div class="teams col-md-11 col-md-offset-1 col-lg-9 col-lg-offset-3 ">
+              <div class="teams col-md-11 col-md-offset-1 col-lg-9 col-lg-offset-3 visible-md visible-lg">
                 <jdoc:include type="modules" name="teamlinks" />
               </div>
             <?php endif; ?> 
@@ -92,7 +105,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
         <!-- Prüfen ob TICKER vorhanden -->
         <?php if($this->countModules('ticker')) :?>
           <div class="row">
-            <div class="col-md-10 col-md-offset-2 hidden-xs">
+            <div class="col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 hidden-xs">
               <div id="ticker"> <jdoc:include type="modules" name="ticker" /> </div>
             </div>
           </div>      
@@ -108,35 +121,63 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
 *           user13, sidebar                             *
 * Other:    Hintergrundbild                             *
 *****************************************************/-->
+<?php if($this->params->get('background')): ?>
+<style>
+    #bgoverall{
+        height:100%;
+        min-height:1100px;
+        margin:0 auto;
+        text-align:left;
+        width:100%;
+        z-index:0;
+        background:url('<?php echo $tpath.'/images/background/'.$this->params->get('background'); ?>') no-repeat top center #000}
+</style>
+ <?php endif; ?>
   <div id="bgoverall">
     <div id="overall">
 
     <!-- ***** NAVBAR JoomlaCK Megamenu***** -->  
       <div class="container">
         <div class="row">
-          <div class="col-md-12"> <jdoc:include type="modules" name="navbar" /> </div>      
+          <div class="col-md-12 col-sm-12"> <jdoc:include type="modules" name="navbar" /> </div>      
         </div>      
       </div>
 
     <!-- ***** SLIDE SHOW + NEWS MODULE ***** -->
+    <!-- Nur auf HAUPTSEITE -->
       <?php if($this->countModules('show or news')) :?>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="row">
-              <div class="col-md-8"> <jdoc:include type="modules" name="show" /> </div>
-              <div class="col-md-4"> <jdoc:include type="modules" name="news" style="xhtml" /> </div> 
-            </div> 
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <div class="row">
+                <div class="col-md-8 col-sm-12"> <jdoc:include type="modules" name="show" /> </div>
+                <div class="col-md-4 col-sm-6"> <jdoc:include type="modules" name="news" style="xhtml" /> </div> 
+    <!-- ***** Sponsoren bei kleinen Bildschirmen neben News ***** -->
+                <div class="col-sm-6 hidden-lg hidden-md hidden-xs"> 
+                  <div class="sponsor1 kp-content "> <jdoc:include type="modules" name="sponsor1" /> </div>
+                </div>
+
+              </div> 
+            </div>
           </div>
         </div>
-      </div>
+      <?php else: ?>
+      <!-- NEBENSEITE -->
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 hidden-lg hidden-md hidden-xs"> 
+              <div class="sponsor1 kp-content "> <jdoc:include type="modules" name="sponsor1" /> </div>
+            </div>
+          </div>
+        </div>
+    
       <?php endif; ?> 
 
     <!-- ***** MAIN SPONSORS & LOGOUT ***** -->
         <?php if($this->countModules('sponsor1')) :?>
         <div class="container">
           <div class="row"> 
-            <div class="col-md-12"> 
+            <div class="col-md-12 hidden-sm"> 
               <div class="sponsor1 kp-content "> <jdoc:include type="modules" name="sponsor1" /> </div>
             </div>
           </div>
@@ -147,75 +188,91 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
     <!-- ***** MAIN CONTENT ***** -->
       <div class="container">
         <div class="row">
-
         <!-- Prüfen ob SIDEBAR vorhanden -->
         <?php if($this->countModules('sidebar')) :?>
         <!-- Wenn SIDEBAR vorhanden -> geteilter Inhalt 9:3 -->
-          <div class="col-md-9">
-            <div class="kp-content">
-              <?php if (!empty($app->getMessageQueue)) : ?>
-                <jdoc:include type="message" />
-              <?php endif ?>
-              <?php if($this->countModules('news')) :?>
-          <!--       <jdoc:include type="component" />  -->      
-              <?php else: ?> 
-                <div class="margin-content"> <jdoc:include type="component" /> </div> 
-              <?php endif; ?> 
+          <!-- HAUPTSEITE?? -->
+          <?php if($menu->getActive() == $menu->getDefault()) :?> 
+            <div class="col-md-9 col-sm-8">
+              <div class="kp-content">
+                <?php if (!empty($app->getMessageQueue)) : ?>
+                  <jdoc:include type="message" />
+                <?php endif ?>
+                <?php if($this->countModules('news')) :?>
+                <?php else: ?> 
+                  <div class="margin-content"> <jdoc:include type="component" /> </div> 
+                <?php endif; ?> 
+              </div> 
+              <div class="row">
+                <div class="col-md-8 col-sm-12">
+                  <?php if($this->countModules('gamecenter')) :?> 
+                  <div class="kp-content margin-correct ">
+                    <jdoc:include type="modules" name="gamecenter" style="xhtml" />
+                    <!-- ***** Bootstrap CAROUSEL ***** -->
+                    <script type="text/javascript"> 
+                      jQuery(document).ready(function() {
+//                        jQuery('.carousel').each(function(){
+//                        jQuery(this).carousel({
+//                            interval: 600000
+//                        });
+//                        jQuery('.carousel').carousel('pause');
+//                        });
+                      });
+                      if (typeof jQuery != 'undefined' && typeof MooTools != 'undefined' ) {
+                          Element.implement({
+                              slide: function(how, mode){
+                                  return this;}
+                          });
+                      } </script>
+  				        </div>
+                  <?php endif; ?>  
+
+                  <?php if($this->countModules('user10')) :?> 
+                    <div class="">
+                      <jdoc:include type="modules" name="user10" style="xhtml" />
+                    </div> 
+                  <?php endif; ?>  
+
+                </div> 
+                <div class="col-md-4 hidden-xs hidden-sm">
+                  <?php if($this->countModules('user11')) :?> 
+                    <jdoc:include type="modules" name="user11" style="xhtml" />
+                  <?php endif; ?>  
+                </div> 
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <?php if($this->countModules('user12')) :?> 
+                    <jdoc:include type="modules" name="user12" style="xhtml" />
+                  <?php endif; ?>  
+                </div> 
+                <div class="col-md-6">
+                  <?php if($this->countModules('user13')) :?> 
+                    <jdoc:include type="modules" name="user13" style="xhtml" />
+                  <?php endif; ?>  
+                </div> 
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-4">
+              <jdoc:include type="modules" name="sidebar" style="xhtml" />
+            </div>
+          <?php else: ?>
+          <!-- NEBENSEITE -->
+            <div class="col-md-9 col-sm-12 col-xs-12">
+              <div class="kp-content">
+                <?php if (!empty($app->getMessageQueue)) : ?>
+                  <jdoc:include type="message" />
+                <?php endif ?>
+                  <div class="margin-content"> <jdoc:include type="component" /> </div> 
+              </div> 
             </div> 
-            <div class="row">
-              <div class="col-md-8">
-                <?php if($this->countModules('gamecenter')) :?> 
-                <div class="kp-content margin-correct ">
-                  <jdoc:include type="modules" name="gamecenter" style="xhtml" />
-                  <!-- ***** Bootstrap CAROUSEL ***** -->
 
-                  <script type="text/javascript"> 
-                    $(document).ready(function() {
-                      $('.carousel').each(function(){
-                      $(this).carousel({
-                          interval: 600000
-                      });
-                      $('.carousel').carousel('pause');
-                      });
-                    });
-                    if (typeof jQuery != 'undefined' && typeof MooTools != 'undefined' ) {
-                        Element.implement({
-                            slide: function(how, mode){
-                                return this;
-                            }
-                        });
-                    }
-                  </script>
-                </div>
-                <?php endif; ?>  
-
-                <?php if($this->countModules('user10')) :?> 
-                  <div class="">
-                    <jdoc:include type="modules" name="user10" style="xhtml" />
-                  </div> 
-                <?php endif; ?>  
-
-              </div> 
-              <div class="col-md-4 hidden-xs">
-                <?php if($this->countModules('user11')) :?> 
-                  <jdoc:include type="modules" name="user11" style="xhtml" />
-                <?php endif; ?>  
-              </div> 
+            <div class="col-md-3 hidden-xs hidden-sm">
+              <jdoc:include type="modules" name="sidebar" style="xhtml" />
             </div>
-            <div class="row">
-              <div class="col-md-6">
-                <?php if($this->countModules('user12')) :?> 
-                  <jdoc:include type="modules" name="user12" style="xhtml" />
-                <?php endif; ?>  
-              </div> 
-              <div class="col-md-6">
-                <?php if($this->countModules('user13')) :?> 
-                  <jdoc:include type="modules" name="user13" style="xhtml" />
-                <?php endif; ?>  
-              </div> 
-            </div>
-          </div>
-          <div class="col-md-3"><jdoc:include type="modules" name="sidebar" style="xhtml" /></div>
+          <?php endif; ?>  
+
         <?php else: ?> 
           <!-- Wenn SIDEBAR nicht vorhanden -> ganze Breite 12 columns für Content wie z.B. Forum -->
             <div class="col-md-12">
@@ -238,10 +295,10 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
 *****************************************************/-->
 <!-- ***** FACEBOOK & EXPEDIA ***** -->
     <?php if($this->countModules('facebook or expedia')) :?>
-    <div class="container hidden-xs">
+    <div class="container ">
       <div class="row">
-        <div class="facebook col-md-6 col-md-offset-1"><jdoc:include type="modules" name="facebook" /></div>
-        <div class="expedia col-md-5"><jdoc:include type="modules" name="expedia" /></div>
+        <div class="facebook col-md-6 col-md-offset-1 col-sm-6 col-xs-12"><jdoc:include type="modules" name="facebook" /></div>
+        <div class="expedia col-md-5 col-sm-6 hidden-xs"><jdoc:include type="modules" name="expedia" /></div>
       </div>
     </div>
     <?php endif; ?> 
@@ -249,12 +306,12 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
     <?php if($this->countModules('sponsor2-1 or sponsor2-2 or sponsor2-3 or sponsor2-4 or sponsor2-5 or sponsor2-6')) :?>
     <div class="container">
       <div class="row">
-        <div class="sponsor2 col-md-2"><jdoc:include type="modules" name="sponsor2-1" /></div>
-        <div class="sponsor2 col-md-2"><jdoc:include type="modules" name="sponsor2-2" /></div>
-        <div class="sponsor2 col-md-2"><jdoc:include type="modules" name="sponsor2-3" /></div>
-        <div class="sponsor2 col-md-2"><jdoc:include type="modules" name="sponsor2-4" /></div>
-        <div class="sponsor2 col-md-2"><jdoc:include type="modules" name="sponsor2-5" /></div>
-        <div class="sponsor2 col-md-2"><jdoc:include type="modules" name="sponsor2-6" /></div>
+        <div class="sponsor2 col-md-2 col-sm-2"><jdoc:include type="modules" name="sponsor2-1" /></div>
+        <div class="sponsor2 col-md-2 col-sm-2"><jdoc:include type="modules" name="sponsor2-2" /></div>
+        <div class="sponsor2 col-md-2 col-sm-2"><jdoc:include type="modules" name="sponsor2-3" /></div>
+        <div class="sponsor2 col-md-2 col-sm-2"><jdoc:include type="modules" name="sponsor2-4" /></div>
+        <div class="sponsor2 col-md-2 col-sm-2"><jdoc:include type="modules" name="sponsor2-5" /></div>
+        <div class="sponsor2 col-md-2 col-sm-2"><jdoc:include type="modules" name="sponsor2-6" /></div>
       </div>
     </div>
     <?php endif; ?> 
@@ -263,11 +320,11 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
     <div class="container hidden-xs">
       <div class="row">
         <a name="toSiteMap" id="toSiteMap" ></a>
-        <div class="sitemap col-md-2 col-md-offset-1"><jdoc:include type="modules" name="sitemap1" /></div>
-        <div class="sitemap col-md-2"><jdoc:include type="modules" name="sitemap2" /></div>
-        <div class="sitemap col-md-2"><jdoc:include type="modules" name="sitemap3" /></div>
-        <div class="sitemap col-md-2"><jdoc:include type="modules" name="sitemap4" /></div>
-        <div class="sitemap col-md-2"><jdoc:include type="modules" name="sitemap5" /></div>
+        <div class="sitemap col-md-2 col-md-offset-1 col-sm-3 col-sm-offset-1"><jdoc:include type="modules" name="sitemap1" /></div>
+        <div class="sitemap col-md-2 col-sm-3"><jdoc:include type="modules" name="sitemap2" /></div>
+        <div class="sitemap col-md-2 col-sm-3"><jdoc:include type="modules" name="sitemap3" /></div>
+        <div class="sitemap col-md-2 col-sm-3"><jdoc:include type="modules" name="sitemap4" /></div>
+        <div class="sitemap col-md-2 col-sm-3"><jdoc:include type="modules" name="sitemap5" /></div>
       </div>
     </div>
     <?php endif; ?> 
@@ -306,24 +363,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
       <jdoc:include type="modules" name="social"/>      
     </div>
   <?php endif; ?> 
-<!-- ***** Scroll To-Top Floating Button ***** -->
-  <!-- jquery --> 
-  <script type="text/javascript" src="<?php echo $tpath.'/js/jquery-1.10.2.min.js'; ?>"></script>
-  <!-- easing plugin ( optional ) -->
-  <script type="text/javascript" src="<?php echo $tpath.'/js/easing.js'; ?>"></script>
-  <!-- UItoTop plugin -->
-  <script type="text/javascript" src="<?php echo $tpath.'/js/jquery.ui.totop.js'; ?>" ></script>
-  <!-- Starting the plugin -->
-  <script type="text/javascript">
-    $(document).ready(function() {
-      /*  var defaults = {
-          containerID: 'toTop', // fading element id
-        containerHoverID: 'toTopHover', // fading element hover id
-        scrollSpeed: 1200,
-        easingType: 'linear' }; */
-      $().UItoTop({ easingType: 'easeOutQuart' });
-    });
-  </script>
+
   
   <jdoc:include type="modules" name="debug" />
 </body>
@@ -350,9 +390,30 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <!-- ********************************************
-*   BOOTSTRAP MENU CODE               *
+*   OTHER CODE               *
 *************************************************/-->
 
-
 </html>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+          jQuery('#lbClose, #lbOverlay').live('click',function(){
+              jQuery('#lbOverlay').height(0);
+          }); 
+    });
+</script>
 
+
+<style>
+    #mainmenu_mr {
+    display: block !important;
+}
+.floatck{
+z-index: 1000000;
+position: relative;
+}
+
+.carousel-control, .carousel-control:focus {
+    top: 35px!important;
+
+}
+</style>

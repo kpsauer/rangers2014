@@ -16,21 +16,20 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
 
 <head>
   <jdoc:include type="head" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <link rel="apple-touch-icon-precomposed" href="<?php echo $tpath; ?>/images/apple-touch-icon-57x57-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $tpath; ?>/images/apple-touch-icon-72x72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $tpath; ?>/images/apple-touch-icon-114x114-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $tpath; ?>/images/apple-touch-icon-144x144-precomposed.png">
   <link rel="stylesheet" href="templates/rangers2014/css/tooltip.css">
-  
   <script src="templates/rangers2014/js/jquery-ui-1.10.4.custom.js"></script>
   <script>
    jQuery(document).ready(function() {
     jQuery( '.rs_calendar_module' ).tooltip();  
     });
+
   </script>
-  <script type="text/javascript" src="<?php echo $tpath.'/js/css3-mediaqueries.js'; ?>"></script> 
   <script type="text/javascript" src="<?php echo $tpath.'/js/easing.js'; ?>"></script>
   <script type="text/javascript" src="<?php echo $tpath.'/js/jquery.ui.totop.js'; ?>" ></script>
   <script type="text/javascript">
@@ -39,22 +38,15 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
     });
     
   </script>
-  
   <!--[if lte IE 8]>
-    <script type='text/javascript' src="<?php echo $tpath.'/js/respond.proxy.js'; ?>"></script>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <?php if ($pie==1) : ?>
       <style> 
-      #bgheader, div#bgheader .teams, .mr-schriftzug, .mr-schriftzug-ticker, .navbar, .navbar-inverse, .tip, .kp-content, h3.moduletable , .moduletable, .mr-tab, .uneditable-input:focus, li.level1.parent > a, li.level1.parent > span.separator, li.level1.parent, ul.menu li.maximenucklogo a img, .game-center-away-team .score, .game-center-home-team .score, img.game-center-home-team, img.game-center-away-team
+      .tip, .kp-content, h3.moduletable , .moduletable, .mr-tab, .uneditable-input:focus, .game-center-away-team .score, .game-center-home-team .score, img.game-center-home-team, img.game-center-away-team
         {behavior:url(<?php echo $tpath; ?>/js/PIE.htc);}
       </style>
     <?php endif; ?>
   <![endif]-->
-  
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-<![endif]-->
 </head>
 <body class="<?php echo (($menu->getActive() == $menu->getDefault()) ? ('front') : ('page')).' '.$active->alias.' '.$pageclass; ?>">
   <a name="toTop" id="toTop" ></a>
@@ -74,13 +66,13 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
               <?php if($this->countModules('ticker')) :?>
                 <div class="mr-schriftzug-ticker">
                   <a href="index.php">
-                    <img src="templates/rangers2014/images/mr-schrift.png" class="mr-muenchen img-responsive" alt="München Rangers Schriftzug"> 
+                    <img src="templates/rangers2014/images/mr-schrift.png" class="mr-muenchen" alt="München Rangers Schriftzug"> 
                   </a>
                 </div>
               <?php else: ?> 
                 <div class="mr-schriftzug">
                   <a href="index.php">
-                    <img src="templates/rangers2014/images/mr-schrift.png" class="mr-muenchen img-responsive" alt="München Rangers Schriftzug"> 
+                    <img src="templates/rangers2014/images/mr-schrift.png" class="mr-muenchen" alt="München Rangers Schriftzug"> 
                   </a>
                 </div>
               <?php endif; ?> 
@@ -88,7 +80,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
         <div class="col-md-8 col-sm-9 col-xs-8">
           <div class="row">
             <?php if($this->countModules('topmenu')) :?>
-              <div class="navbar navbar-inverse col-md-7 col-sm-7 " role="navigation">
+              <div class="navbar navbar-inverse col-md-7 col-sm-7 hidden-xs" role="navigation">
                 <div class="navbar-header">
                   <jdoc:include type="modules" name="topmenu" />
                 </div>
@@ -113,7 +105,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
         <!-- Prüfen ob TICKER vorhanden -->
         <?php if($this->countModules('ticker')) :?>
           <div class="row">
-            <div class="col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 col-xs-11 col-xs-offset-1 ">
+            <div class="col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 hidden-xs">
               <div id="ticker"> <jdoc:include type="modules" name="ticker" /> </div>
             </div>
           </div>      
@@ -207,12 +199,12 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
                     <!-- ***** Bootstrap CAROUSEL ***** -->
                     <script type="text/javascript"> 
                       jQuery(document).ready(function() {
-//                        jQuery('.carousel').each(function(){
-//                        jQuery(this).carousel({
-//                          interval: 600000
-//                        });
-//                        jQuery('.carousel').carousel('pause');
-//                        });
+                        jQuery('.carousel').each(function(){
+                        jQuery(this).carousel({
+                            interval: 600000
+                        });
+                        jQuery('.carousel').carousel('pause');
+                        });
                       });
                       if (typeof jQuery != 'undefined' && typeof MooTools != 'undefined' ) {
                           Element.implement({
