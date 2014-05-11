@@ -45,7 +45,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <?php if ($pie==1) : ?>
       <style> 
-      #bgheader, div#bgheader .teams, .mr-schriftzug, .mr-schriftzug-ticker, .navbar, .navbar-inverse, .tip, .kp-content, h3.moduletable , .moduletable, .mr-tab, .uneditable-input:focus, li.level1.parent > a, li.level1.parent > span.separator, li.level1.parent, ul.menu li.maximenucklogo a img, .game-center-away-team .score, .game-center-home-team .score, img.game-center-home-team, img.game-center-away-team
+      #bgheader, div#bgheader .teams, .mr-schriftzug, .mr-schriftzug-ticker, .navbar, .navbar-inverse, .tip, .kp-content, h3.moduletable , .moduletable, .mr-tab, .uneditable-input:focus, li.level1.parent > a, li.level1.parent > span.separator, li.level1.parent, ul.maximenuck:after, ul.maximenuck li.maximenucklogo a img, .game-center-away-team .score, .game-center-home-team .score, img.game-center-home-team, img.game-center-away-team
         {behavior:url(<?php echo $tpath; ?>/js/PIE.htc);}
       </style>
     <?php endif; ?>
