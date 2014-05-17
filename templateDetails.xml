@@ -3,7 +3,7 @@
 
 <extension version="2.5" type="template" client="site" method="upgrade">
 	
-	<name>Rangers2014</name><!-- name the template -->
+	<name>rangers2014</name><!-- name the template -->
 	<creationDate>2013-11-07</creationDate><!-- the date your are beginn to code -->
 	<author>Klaus-Peter Sauer</author><!-- your name (oops, I repeat myself) -->
 	<copyright>Copyright © KP and Muenchen Rangers</copyright><!-- for who you are coding -->
@@ -13,7 +13,7 @@
 	<description><![CDATA[ 
 		<h1>München Rangers Template 2014</h1>
 		<h2>Version 1.0.0</h2>		
-		<p><img src="../templates/Rangers2014/template_preview.png" /></p>
+		<p><img src="../templates/rangers2014/template_preview.png" /></p>
 		<h2>Modulpositionen</h2>
 		<ol>
 			<li>teamlinks - Liga Logos & Weblinks in der Titelzeile</li>
@@ -63,11 +63,11 @@
 	</files>
 	
 	<languages folder="language"><!-- no need to change -->
-		<language tag="de-DE">de-DE.tpl_Rangers2014.ini</language>
-		<language tag="en-GB">en-GB.tpl_Rangers2014.ini</language>
-		<language tag="ca-CA">ca-CA.tpl_Rangers2014.ini</language>
-		<language tag="es-ES">es-ES.tpl_Rangers2014.ini</language>
-		<language tag="fr-FR">fr-FR.tpl_Rangers2014.ini</language>
+		<language tag="de-DE">de-DE.tpl_rangers2014.ini</language>
+		<language tag="en-GB">en-GB.tpl_rangers2014.ini</language>
+		<language tag="ca-CA">ca-CA.tpl_rangers2014.ini</language>
+		<language tag="es-ES">es-ES.tpl_rangers2014.ini</language>
+		<language tag="fr-FR">fr-FR.tpl_rangers2014.ini</language>
 
 	</languages>
 	
